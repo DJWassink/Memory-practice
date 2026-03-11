@@ -2,8 +2,8 @@
     "levels": [
         {
             "id": 1,
-            "emoji": "🛏️",
             "name": "Bedroom",
+            "emoji": "🛏️",
             "image": "images/bedroom.png",
             "width": 950,
             "height": 1600,
@@ -324,7 +324,7 @@
                     "height": 80
                 },
                 {
-                    "name": "Placement",
+                    "name": "Placemat",
                     "x": 734,
                     "y": 1200,
                     "width": 132,
@@ -345,11 +345,189 @@
                     "height": 129
                 },
                 {
-                    "name": "Wood wall art",
+                    "name": "Lion wall art",
                     "x": 710,
                     "y": 334,
                     "width": 136,
                     "height": 108
+                },
+                {
+                    "name": "Sword",
+                    "x": 336,
+                    "y": 577,
+                    "width": 64,
+                    "height": 178
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Garden",
+            "emoji": "🌳",
+            "image": "images/garden.png",
+            "width": 935,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Map",
+                    "x": 508,
+                    "y": 1329,
+                    "width": 131,
+                    "height": 119
+                },
+                {
+                    "name": "Feather",
+                    "x": 371,
+                    "y": 1024,
+                    "width": 77,
+                    "height": 107
+                },
+                {
+                    "name": "Balloons",
+                    "x": 844,
+                    "y": 467,
+                    "width": 68,
+                    "height": 149
+                },
+                {
+                    "name": "Rubber Duck",
+                    "x": 240,
+                    "y": 1012,
+                    "width": 77,
+                    "height": 109
+                },
+                {
+                    "name": "Corn",
+                    "x": 634,
+                    "y": 970,
+                    "width": 82,
+                    "height": 102
+                },
+                {
+                    "name": "Scarf",
+                    "x": 662,
+                    "y": 1040,
+                    "width": 194,
+                    "height": 93
+                },
+                {
+                    "name": "Wing",
+                    "x": 72,
+                    "y": 628,
+                    "width": 124,
+                    "height": 130
+                },
+                {
+                    "name": "Butterfly",
+                    "x": 816,
+                    "y": 793,
+                    "width": 103,
+                    "height": 123
+                },
+                {
+                    "name": "Bell",
+                    "x": 161,
+                    "y": 293,
+                    "width": 75,
+                    "height": 100
+                },
+                {
+                    "name": "Starfish",
+                    "x": 124,
+                    "y": 849,
+                    "width": 135,
+                    "height": 95
+                },
+                {
+                    "name": "Drifting bottle",
+                    "x": 72,
+                    "y": 1075,
+                    "width": 166,
+                    "height": 102
+                },
+                {
+                    "name": "Sunflower",
+                    "x": 508,
+                    "y": 528,
+                    "width": 114,
+                    "height": 89
+                },
+                {
+                    "name": "Canned Food",
+                    "x": 727,
+                    "y": 1180,
+                    "width": 133,
+                    "height": 100
+                },
+                {
+                    "name": "Spider web",
+                    "x": 674,
+                    "y": 397,
+                    "width": 114,
+                    "height": 91
+                },
+                {
+                    "name": "Backpack",
+                    "x": 562,
+                    "y": 1183,
+                    "width": 149,
+                    "height": 177
+                },
+                {
+                    "name": "Camera",
+                    "x": 0,
+                    "y": 1232,
+                    "width": 133,
+                    "height": 126
+                },
+                {
+                    "name": "Ball",
+                    "x": 730,
+                    "y": 1391,
+                    "width": 107,
+                    "height": 102
+                },
+                {
+                    "name": "Banner",
+                    "x": 145,
+                    "y": 430,
+                    "width": 89,
+                    "height": 172
+                },
+                {
+                    "name": "Hot air balloon",
+                    "x": 359,
+                    "y": 38,
+                    "width": 147,
+                    "height": 196
+                },
+                {
+                    "name": "Chimney",
+                    "x": 527,
+                    "y": 198,
+                    "width": 86,
+                    "height": 109
+                },
+                {
+                    "name": "Tower",
+                    "x": 305,
+                    "y": 243,
+                    "width": 89,
+                    "height": 121
+                },
+                {
+                    "name": "Rope",
+                    "x": 415,
+                    "y": 859,
+                    "width": 131,
+                    "height": 121
+                },
+                {
+                    "name": "Skylight",
+                    "x": 515,
+                    "y": 321,
+                    "width": 110,
+                    "height": 119
                 }
             ]
         }

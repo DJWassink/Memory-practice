@@ -319,6 +319,7 @@
         Load Image
         <input type="file" id="file-input" accept="image/*" style="display:none;">
       </label>
+      <button id="import-btn" class="btn btn-secondary">Import JSON</button>
       <button id="export-btn" class="btn btn-primary">Export JSON</button>
     </div>
   </header>
@@ -343,7 +344,10 @@
     <div class="sidebar">
       <div class="sidebar-header">
         <h2>Level Settings</h2>
-        <input type="text" id="level-name" class="level-name-input" placeholder="Level name (e.g. Living Room)" value="">
+        <div style="display:flex;gap:8px;margin-bottom:8px;">
+          <input type="text" id="level-emoji" class="level-name-input" placeholder="Emoji e.g. 🛋️" style="width:90px;flex-shrink:0;text-align:center;font-size:1.3rem;" maxlength="4">
+          <input type="text" id="level-name" class="level-name-input" placeholder="Level name (e.g. Living Room)" value="">
+        </div>
       </div>
       <div class="items-list-panel" id="items-list-panel">
         <p style="color:#555;text-align:center;padding:30px 10px;font-size:0.9rem;">No items yet. Draw bounding boxes on the image to add items.</p>
@@ -351,6 +355,29 @@
       <div class="sidebar-footer">
         <button id="clear-all-btn" class="btn btn-danger" style="width:100%;">Clear All Items</button>
         <p style="color:#555;font-size:0.75rem;text-align:center;" id="item-count">0 items</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Modal -->
+  <div id="import-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h3>Import Level JSON</h3>
+      <p style="color:#aaa;font-size:0.85rem;">Paste a level object from <code style="color:#f5a623;">levels.json</code> below. The level name and items will be loaded into the editor.</p>
+      <textarea id="import-textarea" placeholder='{
+  "id": 1,
+  "name": "My Level",
+  "image": "images/level1.jpg",
+  "width": 450,
+  "height": 710,
+  "items": [
+    { "name": "Lamp", "x": 50, "y": 30, "width": 60, "height": 80 }
+  ]
+}'></textarea>
+      <p id="import-error" style="color:#e94560;font-size:0.85rem;min-height:1.2em;"></p>
+      <div class="modal-actions">
+        <button id="import-confirm-btn" class="btn btn-primary">Import</button>
+        <button id="import-close-btn" class="btn btn-secondary">Cancel</button>
       </div>
     </div>
   </div>
@@ -412,12 +439,19 @@
     const itemsPanel     = document.getElementById("items-list-panel");
     const itemCountEl    = document.getElementById("item-count");
     const levelNameInput = document.getElementById("level-name");
+    const levelEmojiInput = document.getElementById("level-emoji");
     const exportBtn      = document.getElementById("export-btn");
     const clearAllBtn    = document.getElementById("clear-all-btn");
     const exportModal    = document.getElementById("export-modal");
     const exportTextarea = document.getElementById("export-textarea");
     const copyBtn        = document.getElementById("copy-btn");
     const closeModalBtn  = document.getElementById("close-modal-btn");
+    const importBtn        = document.getElementById("import-btn");
+    const importModal      = document.getElementById("import-modal");
+    const importTextarea   = document.getElementById("import-textarea");
+    const importConfirmBtn = document.getElementById("import-confirm-btn");
+    const importCloseBtn   = document.getElementById("import-close-btn");
+    const importError      = document.getElementById("import-error");
 
     // ── Image Loading ──
     fileInput.addEventListener("change", (e) => {
@@ -446,6 +480,11 @@
           dropZone.style.display = "none";
           workspace.classList.remove("hidden");
           hintText.style.display = "";
+          // Re-render bboxes in case items were imported before the image was loaded
+          if (items.length > 0) {
+            renderBboxes();
+            renderItemsList();
+          }
         };
       };
       reader.readAsDataURL(file);
@@ -725,11 +764,92 @@
       });
     }
 
+    // ── Import ──
+    importBtn.addEventListener("click", () => {
+      importTextarea.value = "";
+      importError.textContent = "";
+      importModal.classList.remove("hidden");
+      setTimeout(() => importTextarea.focus(), 50);
+    });
+
+    importCloseBtn.addEventListener("click", () => importModal.classList.add("hidden"));
+    importModal.addEventListener("click", (e) => {
+      if (e.target === importModal) importModal.classList.add("hidden");
+    });
+
+    importConfirmBtn.addEventListener("click", () => {
+      importError.textContent = "";
+      let parsed;
+      try {
+        parsed = JSON.parse(importTextarea.value.trim());
+      } catch (err) {
+        importError.textContent = "Invalid JSON: " + err.message;
+        return;
+      }
+
+      // Accept either a full levels.json object, an array entry, or a bare level object
+      let level = parsed;
+      if (parsed.levels && Array.isArray(parsed.levels)) {
+        // Full levels.json pasted — take the first level
+        level = parsed.levels[0];
+      }
+
+      if (!level || !Array.isArray(level.items)) {
+        importError.textContent = 'Expected a level object with an "items" array.';
+        return;
+      }
+
+      // Validate items
+      for (const it of level.items) {
+        if (typeof it.name !== "string" || typeof it.x !== "number" || typeof it.y !== "number"
+            || typeof it.width !== "number" || typeof it.height !== "number") {
+          importError.textContent = 'Each item needs: name, x, y, width, height.';
+          return;
+        }
+      }
+
+      // Apply
+      items = level.items.map(it => ({
+        name: it.name,
+        x: Math.round(it.x),
+        y: Math.round(it.y),
+        width: Math.round(it.width),
+        height: Math.round(it.height),
+      }));
+      selectedIdx = -1;
+
+      if (level.name) levelNameInput.value = level.name;
+      if (level.emoji) levelEmojiInput.value = level.emoji;
+
+      // If an image is already loaded we can render straight away,
+      // otherwise show a note about loading the image
+      if (imageNatW > 0) {
+        renderBboxes();
+        renderItemsList();
+      } else {
+        // Store imported items for when image loads
+        renderItemsList();
+        importError.style.color = "#4ecca3";
+        importError.textContent = level.image
+          ? `Load the image "${level.image}" using the Load Image button to see boxes.`
+          : "Load the matching image using the Load Image button to see the boxes.";
+        setTimeout(() => {
+          importError.textContent = "";
+          importError.style.color = "#e94560";
+        }, 4000);
+        importModal.classList.add("hidden");
+        return;
+      }
+
+      importModal.classList.add("hidden");
+    });
+
     // ── Export ──
     exportBtn.addEventListener("click", () => {
       const levelData = {
         id: 1,
         name: levelNameInput.value || "Untitled Level",
+        emoji: levelEmojiInput.value || "🖼️",
         image: "images/" + (imageFileName || "level.jpg"),
         width: imageNatW,
         height: imageNatH,
