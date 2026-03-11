@@ -1,0 +1,357 @@
+{
+    "levels": [
+        {
+            "id": 1,
+            "emoji": "🛏️",
+            "name": "Bedroom",
+            "image": "images/bedroom.png",
+            "width": 950,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Plant",
+                    "x": 268,
+                    "y": 676,
+                    "width": 53,
+                    "height": 72
+                },
+                {
+                    "name": "Vent",
+                    "x": 59,
+                    "y": 73,
+                    "width": 75,
+                    "height": 101
+                },
+                {
+                    "name": "Gold coins",
+                    "x": 169,
+                    "y": 139,
+                    "width": 101,
+                    "height": 85
+                },
+                {
+                    "name": "Rope",
+                    "x": 407,
+                    "y": 153,
+                    "width": 82,
+                    "height": 111
+                },
+                {
+                    "name": "Pouch",
+                    "x": 47,
+                    "y": 473,
+                    "width": 61,
+                    "height": 82
+                },
+                {
+                    "name": "Frying pan",
+                    "x": 92,
+                    "y": 995,
+                    "width": 71,
+                    "height": 101
+                },
+                {
+                    "name": "Calendar",
+                    "x": 275,
+                    "y": 536,
+                    "width": 52,
+                    "height": 71
+                },
+                {
+                    "name": "Curtain",
+                    "x": 73,
+                    "y": 609,
+                    "width": 94,
+                    "height": 200
+                },
+                {
+                    "name": "Mouse",
+                    "x": 673,
+                    "y": 47,
+                    "width": 85,
+                    "height": 99
+                },
+                {
+                    "name": "Spider",
+                    "x": 169,
+                    "y": 382,
+                    "width": 52,
+                    "height": 61
+                },
+                {
+                    "name": "Painting",
+                    "x": 369,
+                    "y": 352,
+                    "width": 113,
+                    "height": 89
+                },
+                {
+                    "name": "Camera",
+                    "x": 336,
+                    "y": 857,
+                    "width": 73,
+                    "height": 54
+                },
+                {
+                    "name": "Easter egg",
+                    "x": 501,
+                    "y": 1152,
+                    "width": 101,
+                    "height": 87
+                },
+                {
+                    "name": "Diary",
+                    "x": 428,
+                    "y": 690,
+                    "width": 71,
+                    "height": 52
+                },
+                {
+                    "name": "Towel",
+                    "x": 320,
+                    "y": 746,
+                    "width": 68,
+                    "height": 66
+                },
+                {
+                    "name": "Headwear",
+                    "x": 800,
+                    "y": 826,
+                    "width": 85,
+                    "height": 61
+                },
+                {
+                    "name": "Key",
+                    "x": 235,
+                    "y": 439,
+                    "width": 89,
+                    "height": 42
+                },
+                {
+                    "name": "Guitar",
+                    "x": 463,
+                    "y": 863,
+                    "width": 68,
+                    "height": 47
+                },
+                {
+                    "name": "Spring",
+                    "x": 381,
+                    "y": 930,
+                    "width": 66,
+                    "height": 42
+                },
+                {
+                    "name": "Mask",
+                    "x": 263,
+                    "y": 1379,
+                    "width": 132,
+                    "height": 108
+                },
+                {
+                    "name": "Cheese",
+                    "x": 564,
+                    "y": 78,
+                    "width": 73,
+                    "height": 71
+                },
+                {
+                    "name": "Rifle",
+                    "x": 661,
+                    "y": 855,
+                    "width": 63,
+                    "height": 209
+                },
+                {
+                    "name": "Cup",
+                    "x": 85,
+                    "y": 849,
+                    "width": 75,
+                    "height": 59
+                },
+                {
+                    "name": "Clock",
+                    "x": 607,
+                    "y": 313,
+                    "width": 85,
+                    "height": 87
+                },
+                {
+                    "name": "Giftbox",
+                    "x": 247,
+                    "y": 872,
+                    "width": 73,
+                    "height": 59
+                },
+                {
+                    "name": "Cloths hanger",
+                    "x": 216,
+                    "y": 969,
+                    "width": 122,
+                    "height": 73
+                },
+                {
+                    "name": "Outfit",
+                    "x": 80,
+                    "y": 1222,
+                    "width": 150,
+                    "height": 242
+                },
+                {
+                    "name": "Rubber ball",
+                    "x": 289,
+                    "y": 1090,
+                    "width": 92,
+                    "height": 96
+                },
+                {
+                    "name": "Flower",
+                    "x": 769,
+                    "y": 1317,
+                    "width": 87,
+                    "height": 87
+                },
+                {
+                    "name": "Snowflake",
+                    "x": 792,
+                    "y": 281,
+                    "width": 71,
+                    "height": 61
+                },
+                {
+                    "name": "Bucket",
+                    "x": 428,
+                    "y": 1327,
+                    "width": 96,
+                    "height": 127
+                },
+                {
+                    "name": "Comb",
+                    "x": 628,
+                    "y": 1163,
+                    "width": 89,
+                    "height": 92
+                },
+                {
+                    "name": "Teddy",
+                    "x": 494,
+                    "y": 410,
+                    "width": 66,
+                    "height": 96
+                },
+                {
+                    "name": "Scroll",
+                    "x": 661,
+                    "y": 1243,
+                    "width": 99,
+                    "height": 115
+                },
+                {
+                    "name": "Hourglass",
+                    "x": 508,
+                    "y": 738,
+                    "width": 78,
+                    "height": 80
+                },
+                {
+                    "name": "Candle",
+                    "x": 823,
+                    "y": 1100,
+                    "width": 96,
+                    "height": 125
+                },
+                {
+                    "name": "Horn",
+                    "x": 616,
+                    "y": 1398,
+                    "width": 108,
+                    "height": 80
+                },
+                {
+                    "name": "Hand drum",
+                    "x": 760,
+                    "y": 486,
+                    "width": 115,
+                    "height": 144
+                },
+                {
+                    "name": "Tree",
+                    "x": 277,
+                    "y": 1225,
+                    "width": 143,
+                    "height": 99
+                },
+                {
+                    "name": "Slipper",
+                    "x": 155,
+                    "y": 1119,
+                    "width": 115,
+                    "height": 92
+                },
+                {
+                    "name": "E",
+                    "x": 574,
+                    "y": 803,
+                    "width": 80,
+                    "height": 92
+                },
+                {
+                    "name": "Stain",
+                    "x": 435,
+                    "y": 1052,
+                    "width": 118,
+                    "height": 92
+                },
+                {
+                    "name": "Goggles",
+                    "x": 553,
+                    "y": 520,
+                    "width": 108,
+                    "height": 99
+                },
+                {
+                    "name": "Chest",
+                    "x": 750,
+                    "y": 895,
+                    "width": 160,
+                    "height": 108
+                },
+                {
+                    "name": "Plate",
+                    "x": 482,
+                    "y": 949,
+                    "width": 99,
+                    "height": 80
+                },
+                {
+                    "name": "Placement",
+                    "x": 734,
+                    "y": 1200,
+                    "width": 132,
+                    "height": 94
+                },
+                {
+                    "name": "Glass bottle",
+                    "x": 736,
+                    "y": 1007,
+                    "width": 96,
+                    "height": 96
+                },
+                {
+                    "name": "Brush",
+                    "x": 534,
+                    "y": 1261,
+                    "width": 125,
+                    "height": 129
+                },
+                {
+                    "name": "Wood wall art",
+                    "x": 710,
+                    "y": 334,
+                    "width": 136,
+                    "height": 108
+                }
+            ]
+        }
+    ]
+}

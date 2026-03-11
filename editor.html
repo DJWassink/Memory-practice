@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bounding Box Editor</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Header ── */
+    header {
+      background: #16213e;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #0f3460;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, #e94560, #f5a623);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-primary { background: #e94560; color: #fff; }
+    .btn-primary:hover { background: #c73a52; }
+    .btn-secondary { background: #0f3460; color: #eee; }
+    .btn-secondary:hover { background: #1a4a8a; }
+    .btn-danger { background: #b91c1c; color: #fff; }
+    .btn-danger:hover { background: #991b1b; }
+    .btn-back { background: rgba(255,255,255,0.1); color: #eee; text-decoration: none; display: inline-flex; align-items: center; }
+    .btn-back:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── Layout ── */
+    .editor-layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Canvas Panel ── */
+    .canvas-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      overflow: auto;
+      position: relative;
+    }
+
+    .drop-zone {
+      border: 3px dashed #0f3460;
+      border-radius: 16px;
+      padding: 60px 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      max-width: 500px;
+      width: 100%;
+    }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: #e94560;
+      background: rgba(233, 69, 96, 0.05);
+    }
+    .drop-zone p { color: #888; margin-bottom: 12px; }
+    .drop-zone .icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    .image-workspace {
+      position: relative;
+      display: inline-block;
+      cursor: crosshair;
+    }
+
+    .image-workspace img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .image-workspace.hidden { display: none; }
+
+    /* Bounding box overlays */
+    .bbox {
+      position: absolute;
+      border: 2px solid #f5a623;
+      background: rgba(245, 166, 35, 0.15);
+      cursor: move;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .bbox:hover { background: rgba(245, 166, 35, 0.3); }
+    .bbox.selected {
+      border-color: #4ecca3;
+      background: rgba(78, 204, 163, 0.2);
+    }
+    .bbox-label {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 10px;
+      padding: 1px 5px;
+      border-radius: 0 0 4px 0;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    /* Resize handles */
+    .bbox .resize-handle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #f5a623;
+      border: 1px solid #000;
+      border-radius: 2px;
+    }
+    .bbox.selected .resize-handle { background: #4ecca3; }
+    .resize-handle.nw { top: -5px; left: -5px; cursor: nw-resize; }
+    .resize-handle.ne { top: -5px; right: -5px; cursor: ne-resize; }
+    .resize-handle.sw { bottom: -5px; left: -5px; cursor: sw-resize; }
+    .resize-handle.se { bottom: -5px; right: -5px; cursor: se-resize; }
+
+    /* Drawing preview rect */
+    .draw-preview {
+      position: absolute;
+      border: 2px dashed #e94560;
+      background: rgba(233, 69, 96, 0.15);
+      pointer-events: none;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      width: 320px;
+      min-width: 320px;
+      background: #16213e;
+      border-left: 1px solid #0f3460;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      padding: 16px;
+      border-bottom: 1px solid #0f3460;
+    }
+    .sidebar-header h2 { font-size: 1.1rem; margin-bottom: 8px; }
+
+    .level-name-input {
+      width: 100%;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #0f3460;
+      background: #0d1b3e;
+      color: #eee;
+      font-size: 0.95rem;
+    }
+
+    .items-list-panel {
+      flex: 1;
+      overflow-y: auto;
+      padding: 8px;
+    }
+
+    .item-entry {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.15s;
+      border: 2px solid transparent;
+    }
+    .item-entry:hover { background: rgba(255,255,255,0.05); }
+    .item-entry.selected {
+      background: rgba(78, 204, 163, 0.1);
+      border-color: #4ecca3;
+    }
+
+    .item-color-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .item-name-input {
+      flex: 1;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #eee;
+      font-size: 0.9rem;
+      padding: 4px 6px;
+      border-radius: 4px;
+    }
+    .item-name-input:focus {
+      border-color: #0f3460;
+      background: #0d1b3e;
+      outline: none;
+    }
+
+    .item-coords {
+      font-size: 0.7rem;
+      color: #666;
+      white-space: nowrap;
+    }
+
+    .item-delete {
+      background: transparent;
+      border: none;
+      color: #e94560;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      opacity: 0.5;
+      transition: opacity 0.15s;
+    }
+    .item-delete:hover { opacity: 1; }
+
+    .sidebar-footer {
+      padding: 16px;
+      border-top: 1px solid #0f3460;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* ── Export Modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 200;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal {
+      background: #16213e;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .modal h3 { color: #4ecca3; }
+    .modal textarea {
+      width: 100%;
+      height: 300px;
+      background: #0d1b3e;
+      color: #eee;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      padding: 12px;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.8rem;
+      resize: vertical;
+    }
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .hint {
+      color: #888;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <a href="index.html" class="btn btn-back">&larr; Game</a>
+      <h1>Bounding Box Editor</h1>
+    </div>
+    <div class="header-actions">
+      <label class="btn btn-secondary" style="cursor:pointer;">
+        Load Image
+        <input type="file" id="file-input" accept="image/*" style="display:none;">
+      </label>
+      <button id="export-btn" class="btn btn-primary">Export JSON</button>
+    </div>
+  </header>
+
+  <div class="editor-layout">
+    <!-- Canvas -->
+    <div class="canvas-panel">
+      <div id="drop-zone" class="drop-zone">
+        <div class="icon">🖼️</div>
+        <p>Drop an image here or click "Load Image"</p>
+        <p style="font-size:0.8rem;color:#555;">Supports JPG, PNG, WebP</p>
+      </div>
+      <div id="image-workspace" class="image-workspace hidden">
+        <img id="editor-image" src="" alt="Level image">
+        <div id="bbox-layer"></div>
+        <div id="draw-preview" class="draw-preview" style="display:none;"></div>
+      </div>
+      <p class="hint" id="hint-text">Draw bounding boxes by clicking and dragging on the image. Right-click a box to delete it.</p>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h2>Level Settings</h2>
+        <input type="text" id="level-name" class="level-name-input" placeholder="Level name (e.g. Living Room)" value="">
+      </div>
+      <div class="items-list-panel" id="items-list-panel">
+        <p style="color:#555;text-align:center;padding:30px 10px;font-size:0.9rem;">No items yet. Draw bounding boxes on the image to add items.</p>
+      </div>
+      <div class="sidebar-footer">
+        <button id="clear-all-btn" class="btn btn-danger" style="width:100%;">Clear All Items</button>
+        <p style="color:#555;font-size:0.75rem;text-align:center;" id="item-count">0 items</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Modal -->
+  <div id="export-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h3>Export Level JSON</h3>
+      <p style="color:#aaa;font-size:0.85rem;">Copy this JSON and paste it as a new entry in <code style="color:#f5a623;">data/levels.json</code> → <code style="color:#f5a623;">levels</code> array.</p>
+      <textarea id="export-textarea" readonly></textarea>
+      <div class="modal-actions">
+        <button id="copy-btn" class="btn btn-primary">Copy to Clipboard</button>
+        <button id="close-modal-btn" class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (() => {
+    "use strict";
+
+    // ── State ──
+    const COLORS = [
+      "#e94560", "#f5a623", "#4ecca3", "#3a86ff",
+      "#ff6b6b", "#c084fc", "#22d3ee", "#facc15", "#fb923c",
+      "#a3e635", "#f472b6", "#818cf8"
+    ];
+
+    let items = [];           // { name, x, y, width, height }  (natural coords)
+    let selectedIdx = -1;
+    let imageNatW = 0;
+    let imageNatH = 0;
+    let imageSrc = "";        // filename
+    let imageFileName = "";
+
+    // Drawing state
+    let isDrawing = false;
+    let drawStart = { x: 0, y: 0 };
+
+    // Dragging state
+    let isDragging = false;
+    let dragIdx = -1;
+    let dragOffset = { x: 0, y: 0 };
+
+    // Resizing state
+    let isResizing = false;
+    let resizeIdx = -1;
+    let resizeHandle = "";
+    let resizeOrigin = {};
+
+    // ── DOM ──
+    const fileInput      = document.getElementById("file-input");
+    const dropZone       = document.getElementById("drop-zone");
+    const workspace      = document.getElementById("image-workspace");
+    const editorImage    = document.getElementById("editor-image");
+    const bboxLayer      = document.getElementById("bbox-layer");
+    const drawPreview    = document.getElementById("draw-preview");
+    const hintText       = document.getElementById("hint-text");
+    const itemsPanel     = document.getElementById("items-list-panel");
+    const itemCountEl    = document.getElementById("item-count");
+    const levelNameInput = document.getElementById("level-name");
+    const exportBtn      = document.getElementById("export-btn");
+    const clearAllBtn    = document.getElementById("clear-all-btn");
+    const exportModal    = document.getElementById("export-modal");
+    const exportTextarea = document.getElementById("export-textarea");
+    const copyBtn        = document.getElementById("copy-btn");
+    const closeModalBtn  = document.getElementById("close-modal-btn");
+
+    // ── Image Loading ──
+    fileInput.addEventListener("change", (e) => {
+      if (e.target.files.length) loadImageFile(e.target.files[0]);
+    });
+
+    dropZone.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      dropZone.classList.add("dragover");
+    });
+    dropZone.addEventListener("dragleave", () => dropZone.classList.remove("dragover"));
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault();
+      dropZone.classList.remove("dragover");
+      if (e.dataTransfer.files.length) loadImageFile(e.dataTransfer.files[0]);
+    });
+
+    function loadImageFile(file) {
+      imageFileName = file.name;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        editorImage.src = e.target.result;
+        editorImage.onload = () => {
+          imageNatW = editorImage.naturalWidth;
+          imageNatH = editorImage.naturalHeight;
+          dropZone.style.display = "none";
+          workspace.classList.remove("hidden");
+          hintText.style.display = "";
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // ── Coordinate Helpers ──
+    function natToDisplay(nx, ny) {
+      const dw = editorImage.clientWidth;
+      const dh = editorImage.clientHeight;
+      return {
+        x: (nx / imageNatW) * dw,
+        y: (ny / imageNatH) * dh,
+      };
+    }
+
+    function displayToNat(dx, dy) {
+      const dw = editorImage.clientWidth;
+      const dh = editorImage.clientHeight;
+      return {
+        x: (dx / dw) * imageNatW,
+        y: (dy / dh) * imageNatH,
+      };
+    }
+
+    function getMousePos(e) {
+      const rect = editorImage.getBoundingClientRect();
+      return {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+    }
+
+    // ── Drawing ──
+    workspace.addEventListener("mousedown", (e) => {
+      if (e.button !== 0) return;
+      // Don't draw if clicking on existing bbox or resize handle
+      if (e.target.closest(".bbox")) return;
+
+      const pos = getMousePos(e);
+      isDrawing = true;
+      drawStart = pos;
+      drawPreview.style.display = "block";
+      drawPreview.style.left = pos.x + "px";
+      drawPreview.style.top = pos.y + "px";
+      drawPreview.style.width = "0px";
+      drawPreview.style.height = "0px";
+      e.preventDefault();
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (isDrawing) {
+        const pos = getMousePos(e);
+        const x = Math.min(drawStart.x, pos.x);
+        const y = Math.min(drawStart.y, pos.y);
+        const w = Math.abs(pos.x - drawStart.x);
+        const h = Math.abs(pos.y - drawStart.y);
+        drawPreview.style.left = x + "px";
+        drawPreview.style.top = y + "px";
+        drawPreview.style.width = w + "px";
+        drawPreview.style.height = h + "px";
+      }
+
+      if (isDragging && dragIdx >= 0) {
+        const pos = getMousePos(e);
+        const nat = displayToNat(pos.x - dragOffset.x, pos.y - dragOffset.y);
+        items[dragIdx].x = Math.max(0, Math.round(nat.x));
+        items[dragIdx].y = Math.max(0, Math.round(nat.y));
+        renderBboxes();
+        renderItemsList();
+      }
+
+      if (isResizing && resizeIdx >= 0) {
+        const pos = getMousePos(e);
+        const nat = displayToNat(pos.x, pos.y);
+        const item = items[resizeIdx];
+        const o = resizeOrigin;
+
+        if (resizeHandle.includes("e")) {
+          item.width = Math.max(10, Math.round(nat.x - o.x));
+        }
+        if (resizeHandle.includes("s")) {
+          item.height = Math.max(10, Math.round(nat.y - o.y));
+        }
+        if (resizeHandle.includes("w")) {
+          const newX = Math.round(nat.x);
+          item.width = Math.max(10, o.x + o.width - newX);
+          item.x = newX;
+        }
+        if (resizeHandle.includes("n")) {
+          const newY = Math.round(nat.y);
+          item.height = Math.max(10, o.y + o.height - newY);
+          item.y = newY;
+        }
+
+        renderBboxes();
+        renderItemsList();
+      }
+    });
+
+    window.addEventListener("mouseup", (e) => {
+      if (isDrawing) {
+        isDrawing = false;
+        drawPreview.style.display = "none";
+
+        const pos = getMousePos(e);
+        const x1 = Math.min(drawStart.x, pos.x);
+        const y1 = Math.min(drawStart.y, pos.y);
+        const x2 = Math.max(drawStart.x, pos.x);
+        const y2 = Math.max(drawStart.y, pos.y);
+
+        // Minimum size check
+        if (x2 - x1 > 8 && y2 - y1 > 8) {
+          const natStart = displayToNat(x1, y1);
+          const natEnd = displayToNat(x2, y2);
+          const newItem = {
+            name: "Item " + (items.length + 1),
+            x: Math.round(natStart.x),
+            y: Math.round(natStart.y),
+            width: Math.round(natEnd.x - natStart.x),
+            height: Math.round(natEnd.y - natStart.y),
+          };
+          items.push(newItem);
+          selectedIdx = items.length - 1;
+          renderBboxes();
+          renderItemsList();
+        }
+      }
+
+      if (isDragging) {
+        isDragging = false;
+        dragIdx = -1;
+      }
+
+      if (isResizing) {
+        isResizing = false;
+        resizeIdx = -1;
+      }
+    });
+
+    // ── Bounding Box Interaction ──
+    function onBboxMouseDown(e, idx) {
+      if (e.button !== 0) return;
+      e.stopPropagation();
+      e.preventDefault();
+
+      selectedIdx = idx;
+      renderBboxes();
+      renderItemsList();
+
+      const pos = getMousePos(e);
+      const item = items[idx];
+      const disp = natToDisplay(item.x, item.y);
+
+      isDragging = true;
+      dragIdx = idx;
+      dragOffset = { x: pos.x - disp.x, y: pos.y - disp.y };
+    }
+
+    function onResizeMouseDown(e, idx, handle) {
+      e.stopPropagation();
+      e.preventDefault();
+
+      selectedIdx = idx;
+      isResizing = true;
+      resizeIdx = idx;
+      resizeHandle = handle;
+      resizeOrigin = { ...items[idx] };
+      renderBboxes();
+      renderItemsList();
+    }
+
+    // Right-click to delete
+    workspace.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      const bboxEl = e.target.closest(".bbox");
+      if (bboxEl) {
+        const idx = parseInt(bboxEl.dataset.index);
+        items.splice(idx, 1);
+        if (selectedIdx === idx) selectedIdx = -1;
+        else if (selectedIdx > idx) selectedIdx--;
+        renderBboxes();
+        renderItemsList();
+      }
+    });
+
+    // ── Rendering ──
+    function renderBboxes() {
+      bboxLayer.innerHTML = "";
+      items.forEach((item, idx) => {
+        const disp = natToDisplay(item.x, item.y);
+        const dispSize = natToDisplay(item.x + item.width, item.y + item.height);
+        const w = dispSize.x - disp.x;
+        const h = dispSize.y - disp.y;
+        const color = COLORS[idx % COLORS.length];
+
+        const box = document.createElement("div");
+        box.className = "bbox" + (idx === selectedIdx ? " selected" : "");
+        box.dataset.index = idx;
+        box.style.left = disp.x + "px";
+        box.style.top = disp.y + "px";
+        box.style.width = w + "px";
+        box.style.height = h + "px";
+        box.style.borderColor = idx === selectedIdx ? "#4ecca3" : color;
+        box.style.background = (idx === selectedIdx ? "rgba(78,204,163,0.15)" : `${color}22`);
+
+        box.innerHTML = `
+          <span class="bbox-label" style="background:${color}cc;">${item.name}</span>
+          <div class="resize-handle nw" data-handle="nw"></div>
+          <div class="resize-handle ne" data-handle="ne"></div>
+          <div class="resize-handle sw" data-handle="sw"></div>
+          <div class="resize-handle se" data-handle="se"></div>
+        `;
+
+        box.addEventListener("mousedown", (e) => {
+          if (e.target.classList.contains("resize-handle")) {
+            onResizeMouseDown(e, idx, e.target.dataset.handle);
+          } else {
+            onBboxMouseDown(e, idx);
+          }
+        });
+
+        bboxLayer.appendChild(box);
+      });
+
+      itemCountEl.textContent = items.length + " item" + (items.length !== 1 ? "s" : "");
+    }
+
+    function renderItemsList() {
+      if (items.length === 0) {
+        itemsPanel.innerHTML = '<p style="color:#555;text-align:center;padding:30px 10px;font-size:0.9rem;">No items yet. Draw bounding boxes on the image to add items.</p>';
+        return;
+      }
+
+      itemsPanel.innerHTML = "";
+      items.forEach((item, idx) => {
+        const color = COLORS[idx % COLORS.length];
+        const entry = document.createElement("div");
+        entry.className = "item-entry" + (idx === selectedIdx ? " selected" : "");
+        entry.innerHTML = `
+          <span class="item-color-dot" style="background:${color};"></span>
+          <input type="text" class="item-name-input" value="${escapeHtml(item.name)}" data-idx="${idx}">
+          <span class="item-coords">${item.x},${item.y} ${item.width}×${item.height}</span>
+          <button class="item-delete" data-idx="${idx}" title="Delete">&times;</button>
+        `;
+
+        entry.addEventListener("click", (e) => {
+          if (e.target.tagName === "INPUT" || e.target.tagName === "BUTTON") return;
+          selectedIdx = idx;
+          renderBboxes();
+          renderItemsList();
+        });
+
+        const nameInput = entry.querySelector(".item-name-input");
+        nameInput.addEventListener("input", (e) => {
+          items[idx].name = e.target.value;
+          renderBboxes();
+        });
+        nameInput.addEventListener("focus", () => {
+          selectedIdx = idx;
+          renderBboxes();
+          // Re-highlight in list without losing focus
+          document.querySelectorAll(".item-entry").forEach((el, i) => {
+            el.classList.toggle("selected", i === idx);
+          });
+        });
+
+        const delBtn = entry.querySelector(".item-delete");
+        delBtn.addEventListener("click", () => {
+          items.splice(idx, 1);
+          if (selectedIdx === idx) selectedIdx = -1;
+          else if (selectedIdx > idx) selectedIdx--;
+          renderBboxes();
+          renderItemsList();
+        });
+
+        itemsPanel.appendChild(entry);
+      });
+    }
+
+    // ── Export ──
+    exportBtn.addEventListener("click", () => {
+      const levelData = {
+        id: 1,
+        name: levelNameInput.value || "Untitled Level",
+        image: "images/" + (imageFileName || "level.jpg"),
+        width: imageNatW,
+        height: imageNatH,
+        items: items.map(it => ({
+          name: it.name,
+          x: it.x,
+          y: it.y,
+          width: it.width,
+          height: it.height,
+        })),
+      };
+
+      exportTextarea.value = JSON.stringify(levelData, null, 2);
+      exportModal.classList.remove("hidden");
+    });
+
+    copyBtn.addEventListener("click", () => {
+      exportTextarea.select();
+      navigator.clipboard.writeText(exportTextarea.value).then(() => {
+        copyBtn.textContent = "Copied!";
+        setTimeout(() => { copyBtn.textContent = "Copy to Clipboard"; }, 1500);
+      });
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      exportModal.classList.add("hidden");
+    });
+
+    exportModal.addEventListener("click", (e) => {
+      if (e.target === exportModal) exportModal.classList.add("hidden");
+    });
+
+    // ── Clear All ──
+    clearAllBtn.addEventListener("click", () => {
+      if (items.length === 0) return;
+      if (confirm("Delete all " + items.length + " items?")) {
+        items = [];
+        selectedIdx = -1;
+        renderBboxes();
+        renderItemsList();
+      }
+    });
+
+    // ── Keyboard shortcuts ──
+    window.addEventListener("keydown", (e) => {
+      // Delete selected item
+      if ((e.key === "Delete" || e.key === "Backspace") && selectedIdx >= 0) {
+        // Don't delete if focused on an input
+        if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") return;
+        items.splice(selectedIdx, 1);
+        selectedIdx = -1;
+        renderBboxes();
+        renderItemsList();
+      }
+      // Escape to deselect
+      if (e.key === "Escape") {
+        selectedIdx = -1;
+        renderBboxes();
+        renderItemsList();
+        exportModal.classList.add("hidden");
+      }
+    });
+
+    // ── Reposition on resize ──
+    window.addEventListener("resize", () => {
+      if (imageNatW > 0) renderBboxes();
+    });
+
+    // ── Util ──
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    }
+  })();
+  </script>
+</body>
+</html>
