@@ -139,8 +139,9 @@
       pickNewRound();
     };
 
-    // If image is cached
+    // If image is already cached / data URI (onload won't fire again)
     if (gameImage.complete && gameImage.naturalWidth > 0) {
+      gameImage.onload = null;
       imageNaturalW = gameImage.naturalWidth;
       imageNaturalH = gameImage.naturalHeight;
       pickNewRound();

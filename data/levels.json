@@ -1,7 +1,6 @@
 {
     "levels": [
         {
-            "id": 1,
             "name": "Bedroom",
             "emoji": "🛏️",
             "image": "images/bedroom.png",
@@ -361,7 +360,6 @@
             ]
         },
         {
-            "id": 2,
             "name": "Garden",
             "emoji": "🌳",
             "image": "images/garden.png",
