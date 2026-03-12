@@ -51,9 +51,38 @@
 
     <div id="level-complete" class="level-complete hidden">
       <div class="level-complete-inner">
-        <h3>Level Complete!</h3>
+        <h3>🏆 Level Complete!</h3>
         <p>You found every item in this scene!</p>
-        <button id="back-to-menu-btn" class="btn btn-primary">Back to Menu</button>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Total time</div>
+            <div class="stat-value" id="stat-time">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Avg per item</div>
+            <div class="stat-value" id="stat-avg">—</div>
+          </div>
+          <div class="stat-card stat-good">
+            <div class="stat-label">⚡ Fastest find</div>
+            <div class="stat-value" id="stat-fastest">—</div>
+          </div>
+          <div class="stat-card stat-bad">
+            <div class="stat-label">🐢 Slowest find</div>
+            <div class="stat-value" id="stat-slowest">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Wrong clicks</div>
+            <div class="stat-value" id="stat-wrong">—</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Accuracy</div>
+            <div class="stat-value" id="stat-accuracy">—</div>
+          </div>
+        </div>
+        <div class="level-complete-actions">
+          <button id="redo-level-btn" class="btn btn-secondary">↺ Redo Level</button>
+          <button id="back-to-menu-btn" class="btn btn-primary">Back to Menu</button>
+        </div>
       </div>
     </div>
   </div>

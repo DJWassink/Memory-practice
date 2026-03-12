@@ -12,6 +12,13 @@
   let imageNaturalW = 0;
   let imageNaturalH = 0;
 
+  // ── Stats ────────────────────────────────
+  let levelStartTime = 0;
+  let roundStartTime = 0;
+  let itemFindTimes = [];   // ms per found item
+  let wrongClicks = 0;
+  let totalClicks = 0;
+
   // ── DOM refs ─────────────────────────────
   const menuScreen       = document.getElementById("menu-screen");
   const gameScreen        = document.getElementById("game-screen");
@@ -28,6 +35,7 @@
   const backBtn           = document.getElementById("back-btn");
   const nextRoundBtn      = document.getElementById("next-round-btn");
   const backToMenuBtn     = document.getElementById("back-to-menu-btn");
+  const redoLevelBtn      = document.getElementById("redo-level-btn");
 
   // ── Boot ─────────────────────────────────
   async function init() {
@@ -125,6 +133,12 @@
     remainingPool = [...Array(level.items.length).keys()]; // indices
     shuffle(remainingPool);
 
+    // Reset stats
+    levelStartTime = Date.now();
+    itemFindTimes = [];
+    wrongClicks = 0;
+    totalClicks = 0;
+
     levelTitle.textContent = level.name;
     gameImage.src = level.image;
 
@@ -198,6 +212,7 @@
   function pickNewRound() {
     foundItems.clear();
     selectedTag = null;
+    roundStartTime = Date.now();
 
     if (remainingPool.length === 0) {
       showLevelComplete();
@@ -334,6 +349,8 @@
       markFound(hitIdx);
       showClickFeedback(clickX, clickY, true);
     } else {
+      wrongClicks++;
+      totalClicks++;
       showClickFeedback(clickX, clickY, false);
     }
   }
@@ -341,7 +358,12 @@
   function markFound(idx) {
     foundItems.add(idx);
     totalFound++;
+    totalClicks++;
     scoreSpan.textContent = totalFound;
+
+    // Record how long this item took
+    itemFindTimes.push(Date.now() - roundStartTime);
+    roundStartTime = Date.now(); // reset for next item
 
     // Update tag
     const tag = itemsList.querySelector(`[data-index="${idx}"]`);
@@ -383,6 +405,26 @@
   }
 
   function showLevelComplete() {
+    const totalMs = Date.now() - levelStartTime;
+    const totalSec = Math.round(totalMs / 1000);
+    const mins = Math.floor(totalSec / 60);
+    const secs = totalSec % 60;
+    const timeStr = mins > 0 ? `${mins}m ${secs}s` : `${secs}s`;
+
+    const avgMs = itemFindTimes.length
+      ? Math.round(itemFindTimes.reduce((a, b) => a + b, 0) / itemFindTimes.length / 100) / 10
+      : 0;
+    const fastestMs = itemFindTimes.length ? Math.round(Math.min(...itemFindTimes) / 100) / 10 : 0;
+    const slowestMs = itemFindTimes.length ? Math.round(Math.max(...itemFindTimes) / 100) / 10 : 0;
+    const accuracy = totalClicks > 0 ? Math.round((totalFound / totalClicks) * 100) : 100;
+
+    document.getElementById("stat-time").textContent = timeStr;
+    document.getElementById("stat-avg").textContent = `${avgMs}s`;
+    document.getElementById("stat-fastest").textContent = `${fastestMs}s`;
+    document.getElementById("stat-slowest").textContent = `${slowestMs}s`;
+    document.getElementById("stat-wrong").textContent = wrongClicks;
+    document.getElementById("stat-accuracy").textContent = `${accuracy}%`;
+
     levelComplete.classList.remove("hidden");
   }
 
@@ -404,6 +446,7 @@
   function bindGlobal() {
     backBtn.addEventListener("click", goToMenu);
     backToMenuBtn.addEventListener("click", goToMenu);
+    redoLevelBtn.addEventListener("click", () => startLevel(currentLevel));
     nextRoundBtn.addEventListener("click", () => pickNewRound());
     imageContainer.addEventListener("click", handleImageClick);
 
