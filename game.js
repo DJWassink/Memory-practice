@@ -71,6 +71,7 @@
       delBtn.title = "Remove custom level";
       delBtn.addEventListener("click", (e) => {
         e.stopPropagation();
+        if (!confirm(`Remove "${level.name}" from your custom levels?`)) return;
         CustomLevels.remove(level.name);
         renderMenu();
       });
