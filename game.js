@@ -36,22 +36,83 @@
     levelsData = data.levels;
     renderMenu();
     bindGlobal();
+    bindImportModal();
   }
 
   // ── Menu ─────────────────────────────────
   function renderMenu() {
     levelGrid.innerHTML = "";
-    levelsData.forEach((level, i) => {
-      const card = document.createElement("div");
-      card.className = "level-card";
-      card.innerHTML = `
-        <div class="level-card-placeholder">${level.emoji}</div>
-        <div class="level-card-body">
-          <div class="level-card-name">${level.name}</div>
-          <div class="level-card-info">${level.items.length} hidden items</div>
-        </div>`;
-      card.addEventListener("click", () => startLevel(level));
-      levelGrid.appendChild(card);
+
+    // Built-in levels
+    levelsData.forEach((level) => {
+      levelGrid.appendChild(buildLevelCard(level, false));
+    });
+
+    // Custom levels from localStorage
+    const custom = CustomLevels.getAll();
+    custom.forEach((level) => {
+      levelGrid.appendChild(buildLevelCard(level, true));
+    });
+  }
+
+  function buildLevelCard(level, isCustom) {
+    const card = document.createElement("div");
+    card.className = "level-card" + (isCustom ? " custom" : "");
+    card.innerHTML = `
+      <div class="level-card-placeholder">${level.emoji || "🖼️"}</div>
+      <div class="level-card-body">
+        <div class="level-card-name">${level.name}</div>
+        <div class="level-card-info">${level.items.length} hidden items</div>
+      </div>`;
+    if (isCustom) {
+      const delBtn = document.createElement("button");
+      delBtn.className = "level-card-delete";
+      delBtn.innerHTML = "&times;";
+      delBtn.title = "Remove custom level";
+      delBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        CustomLevels.remove(level.name);
+        renderMenu();
+      });
+      card.appendChild(delBtn);
+    }
+    card.addEventListener("click", () => startLevel(level));
+    return card;
+  }
+
+  // ── Import Modal ─────────────────────────
+  function bindImportModal() {
+    const importBtn       = document.getElementById("import-level-btn");
+    const importModal     = document.getElementById("import-modal");
+    const importTextarea  = document.getElementById("import-textarea");
+    const importError     = document.getElementById("import-error");
+    const importConfirm   = document.getElementById("import-confirm-btn");
+    const importCancel    = document.getElementById("import-cancel-btn");
+
+    if (!importBtn) return;
+
+    importBtn.addEventListener("click", () => {
+      importTextarea.value = "";
+      importError.textContent = "";
+      importModal.classList.remove("hidden");
+      setTimeout(() => importTextarea.focus(), 50);
+    });
+
+    importCancel.addEventListener("click", () => importModal.classList.add("hidden"));
+    importModal.addEventListener("click", (e) => {
+      if (e.target === importModal) importModal.classList.add("hidden");
+    });
+
+    importConfirm.addEventListener("click", () => {
+      importError.textContent = "";
+      const result = CustomLevels.parse(importTextarea.value);
+      if (!result.ok) {
+        importError.textContent = result.error;
+        return;
+      }
+      CustomLevels.save(result.level);
+      importModal.classList.add("hidden");
+      renderMenu();
     });
   }
 

@@ -13,7 +13,10 @@
       <h1 class="game-title">Find It!</h1>
       <p class="subtitle">Select a level to start searching</p>
       <div id="level-grid" class="level-grid"></div>
-      <a href="editor.html" class="editor-link">Open Bounding Box Editor</a>
+      <div class="menu-actions">
+        <button id="import-level-btn" class="editor-link">Import Custom Level</button>
+        <a href="editor.html" class="editor-link">Open Bounding Box Editor</a>
+      </div>
     </div>
   </div>
 
@@ -33,7 +36,7 @@
       </div>
 
       <div id="items-bar" class="items-bar">
-        <p class="items-label">Find these items:</p>
+        <p class="items-label">Find these items: <span class="items-hint">(hover name to reveal)</span></p>
         <div id="items-list" class="items-list"></div>
       </div>
     </div>
@@ -55,6 +58,21 @@
     </div>
   </div>
 
+  <!-- Import Level Modal -->
+  <div id="import-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <h3>Import Custom Level</h3>
+      <p class="modal-desc">Paste a level JSON exported from the editor.</p>
+      <textarea id="import-textarea" placeholder='{ "name": "My Level", "items": [...] }'></textarea>
+      <p id="import-error" class="modal-error"></p>
+      <div class="modal-actions">
+        <button id="import-confirm-btn" class="btn btn-primary">Import</button>
+        <button id="import-cancel-btn" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="custom-levels.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

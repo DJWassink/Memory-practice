@@ -11,7 +11,7 @@
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
       background: #1a1a2e;
       color: #eee;
-      min-height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
     }
@@ -26,6 +26,8 @@
       border-bottom: 1px solid #0f3460;
       flex-wrap: wrap;
       gap: 12px;
+      position: relative;
+      z-index: 20;
     }
 
     header h1 {
@@ -75,9 +77,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      padding: 18px;
       overflow: auto;
       position: relative;
+      margin-right: 320px;
     }
 
     .drop-zone {
@@ -109,7 +112,40 @@
       height: auto;
     }
 
+    .image-workspace.fit-viewport img {
+      max-height: calc(100vh - var(--header-h, 57px) - 60px);
+      max-height: calc(100dvh - var(--header-h, 57px) - 60px);
+      width: auto;
+    }
+
     .image-workspace.hidden { display: none; }
+
+    /* Zoom toggle */
+    .zoom-toggle {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 15;
+      background: rgba(15, 52, 96, 0.85);
+      border: 1px solid #0f3460;
+      color: #eee;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      backdrop-filter: blur(4px);
+    }
+    .zoom-toggle:hover {
+      background: rgba(233, 69, 96, 0.7);
+    }
+    .zoom-toggle.active {
+      background: rgba(233, 69, 96, 0.85);
+    }
 
     /* Bounding box overlays */
     .bbox {
@@ -120,11 +156,32 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
+      transition: opacity 0.15s, box-shadow 0.15s;
     }
-    .bbox:hover { background: rgba(245, 166, 35, 0.3); }
+    .bbox:hover, .bbox.hovered {
+      background: rgba(245, 166, 35, 0.3);
+    }
+    .bbox.hovered:not(.selected) {
+      border-width: 3px;
+      box-shadow: 0 0 12px 2px rgba(245, 166, 35, 0.5);
+      z-index: 4;
+      opacity: 1 !important;
+    }
+    /* Dim non-selected boxes when any box is selected */
+    .bbox-layer.has-selection .bbox:not(.selected) {
+      opacity: 0.35;
+    }
     .bbox.selected {
-      border-color: #4ecca3;
-      background: rgba(78, 204, 163, 0.2);
+      border: 3px solid #fff;
+      outline: 3px solid rgba(233, 69, 96, 0.9);
+      outline-offset: 0px;
+      box-shadow: 0 0 18px 4px rgba(233, 69, 96, 0.5);
+      z-index: 5;
+      animation: bbox-pulse 1.2s ease-in-out infinite;
+    }
+    @keyframes bbox-pulse {
+      0%, 100% { box-shadow: 0 0 18px 4px rgba(233, 69, 96, 0.5); }
+      50% { box-shadow: 0 0 28px 8px rgba(233, 69, 96, 0.75); }
     }
     .bbox-label {
       background: rgba(0,0,0,0.7);
@@ -145,7 +202,7 @@
       border: 1px solid #000;
       border-radius: 2px;
     }
-    .bbox.selected .resize-handle { background: #4ecca3; }
+    .bbox.selected .resize-handle { background: #fff; border-color: #e94560; }
     .resize-handle.nw { top: -5px; left: -5px; cursor: nw-resize; }
     .resize-handle.ne { top: -5px; right: -5px; cursor: ne-resize; }
     .resize-handle.sw { bottom: -5px; left: -5px; cursor: sw-resize; }
@@ -167,12 +224,18 @@
       border-left: 1px solid #0f3460;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      position: fixed;
+      top: var(--header-h, 57px);
+      right: 0;
+      height: calc(100vh - var(--header-h, 57px));
+      height: calc(100dvh - var(--header-h, 57px));
+      z-index: 10;
     }
 
     .sidebar-header {
       padding: 16px;
       border-bottom: 1px solid #0f3460;
+      flex-shrink: 0;
     }
     .sidebar-header h2 { font-size: 1.1rem; margin-bottom: 8px; }
 
@@ -194,8 +257,9 @@
 
     .item-entry {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 8px;
+      gap: 4px 8px;
       padding: 8px 10px;
       border-radius: 8px;
       cursor: pointer;
@@ -234,6 +298,9 @@
       font-size: 0.7rem;
       color: #666;
       white-space: nowrap;
+      width: 100%;
+      order: -1;
+      padding-left: 20px;
     }
 
     .item-delete {
@@ -255,6 +322,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      flex-shrink: 0;
     }
 
     /* ── Export Modal ── */
@@ -315,12 +383,10 @@
       <h1>Bounding Box Editor</h1>
     </div>
     <div class="header-actions">
-      <label class="btn btn-secondary" style="cursor:pointer;">
-        Load Image
-        <input type="file" id="file-input" accept="image/*" style="display:none;">
-      </label>
+      <button id="load-image-btn" class="btn btn-secondary">Load Image</button>
       <button id="import-btn" class="btn btn-secondary">Import JSON</button>
       <button id="export-btn" class="btn btn-primary">Export JSON</button>
+      <button id="save-to-game-btn" class="btn btn-primary" style="background:#4ecca3;">Save to Game</button>
     </div>
   </header>
 
@@ -328,15 +394,17 @@
     <!-- Canvas -->
     <div class="canvas-panel">
       <div id="drop-zone" class="drop-zone">
+        <input type="file" id="file-input" accept="image/*" style="display:none;">
         <div class="icon">🖼️</div>
-        <p>Drop an image here or click "Load Image"</p>
+        <p>Drop an image here or click to browse</p>
         <p style="font-size:0.8rem;color:#555;">Supports JPG, PNG, WebP</p>
       </div>
       <div id="image-workspace" class="image-workspace hidden">
         <img id="editor-image" src="" alt="Level image">
-        <div id="bbox-layer"></div>
+        <div id="bbox-layer" class="bbox-layer"></div>
         <div id="draw-preview" class="draw-preview" style="display:none;"></div>
       </div>
+      <button id="zoom-toggle" class="zoom-toggle" title="Toggle fit to viewport">🔍</button>
       <p class="hint" id="hint-text">Draw bounding boxes by clicking and dragging on the image. Right-click a box to delete it.</p>
     </div>
 
@@ -344,6 +412,11 @@
     <div class="sidebar">
       <div class="sidebar-header">
         <h2>Level Settings</h2>
+        <div style="margin-bottom:8px;">
+          <select id="stored-levels-dropdown" style="width:100%;padding:7px 10px;border-radius:8px;border:1px solid #0f3460;background:#0d1b3e;color:#eee;font-size:0.85rem;cursor:pointer;">
+            <option value="">Load from storage…</option>
+          </select>
+        </div>
         <div style="display:flex;gap:8px;margin-bottom:8px;">
           <input type="text" id="level-emoji" class="level-name-input" placeholder="Emoji e.g. 🛋️" style="width:90px;flex-shrink:0;text-align:center;font-size:1.3rem;" maxlength="4">
           <input type="text" id="level-name" class="level-name-input" placeholder="Level name (e.g. Living Room)" value="">
@@ -395,6 +468,16 @@
     </div>
   </div>
 
+  <script src="custom-levels.js"></script>
+  <script>
+  // Measure header height and set CSS variable for sidebar positioning
+  {
+    const hdr = document.querySelector("header");
+    const update = () => document.documentElement.style.setProperty("--header-h", hdr.offsetHeight + "px");
+    update();
+    window.addEventListener("resize", update);
+  }
+  </script>
   <script>
   (() => {
     "use strict";
@@ -412,6 +495,7 @@
     let imageNatH = 0;
     let imageSrc = "";        // filename
     let imageFileName = "";
+    let builtinLevels = [];   // fetched from data/levels.json
 
     // Drawing state
     let isDrawing = false;
@@ -436,6 +520,7 @@
     const bboxLayer      = document.getElementById("bbox-layer");
     const drawPreview    = document.getElementById("draw-preview");
     const hintText       = document.getElementById("hint-text");
+    const zoomToggle     = document.getElementById("zoom-toggle");
     const itemsPanel     = document.getElementById("items-list-panel");
     const itemCountEl    = document.getElementById("item-count");
     const levelNameInput = document.getElementById("level-name");
@@ -452,11 +537,18 @@
     const importConfirmBtn = document.getElementById("import-confirm-btn");
     const importCloseBtn   = document.getElementById("import-close-btn");
     const importError      = document.getElementById("import-error");
+    const saveToGameBtn    = document.getElementById("save-to-game-btn");
+    const loadImageBtn     = document.getElementById("load-image-btn");
+    const storedDropdown   = document.getElementById("stored-levels-dropdown");
 
     // ── Image Loading ──
     fileInput.addEventListener("change", (e) => {
       if (e.target.files.length) loadImageFile(e.target.files[0]);
     });
+
+    loadImageBtn.addEventListener("click", () => fileInput.click());
+
+    dropZone.addEventListener("click", () => fileInput.click());
 
     dropZone.addEventListener("dragover", (e) => {
       e.preventDefault();
@@ -473,6 +565,7 @@
       imageFileName = file.name;
       const reader = new FileReader();
       reader.onload = (e) => {
+        imageSrc = e.target.result;   // store data URI for save-to-game
         editorImage.src = e.target.result;
         editorImage.onload = () => {
           imageNatW = editorImage.naturalWidth;
@@ -480,6 +573,7 @@
           dropZone.style.display = "none";
           workspace.classList.remove("hidden");
           hintText.style.display = "";
+          loadImageBtn.textContent = "Load Other Image";
           // Re-render bboxes in case items were imported before the image was loaded
           if (items.length > 0) {
             renderBboxes();
@@ -673,22 +767,31 @@
     // ── Rendering ──
     function renderBboxes() {
       bboxLayer.innerHTML = "";
+      // Toggle class on layer so CSS can dim non-selected boxes
+      bboxLayer.classList.toggle("has-selection", selectedIdx >= 0);
+
       items.forEach((item, idx) => {
         const disp = natToDisplay(item.x, item.y);
         const dispSize = natToDisplay(item.x + item.width, item.y + item.height);
         const w = dispSize.x - disp.x;
         const h = dispSize.y - disp.y;
         const color = COLORS[idx % COLORS.length];
+        const isSel = idx === selectedIdx;
 
         const box = document.createElement("div");
-        box.className = "bbox" + (idx === selectedIdx ? " selected" : "");
+        box.className = "bbox" + (isSel ? " selected" : "");
         box.dataset.index = idx;
         box.style.left = disp.x + "px";
         box.style.top = disp.y + "px";
         box.style.width = w + "px";
         box.style.height = h + "px";
-        box.style.borderColor = idx === selectedIdx ? "#4ecca3" : color;
-        box.style.background = (idx === selectedIdx ? "rgba(78,204,163,0.15)" : `${color}22`);
+        // Keep per-item color when not selected; white border is handled by CSS for selected
+        if (!isSel) {
+          box.style.borderColor = color;
+          box.style.background = `${color}22`;
+        } else {
+          box.style.background = `${color}44`;
+        }
 
         box.innerHTML = `
           <span class="bbox-label" style="background:${color}cc;">${item.name}</span>
@@ -760,9 +863,30 @@
           renderItemsList();
         });
 
+        // Hover events — highlight corresponding bbox on map
+        entry.addEventListener("mouseenter", () => {
+          const box = bboxLayer.querySelector(`[data-index="${idx}"]`);
+          if (box) box.classList.add("hovered");
+        });
+        entry.addEventListener("mouseleave", () => {
+          const box = bboxLayer.querySelector(`[data-index="${idx}"]`);
+          if (box) box.classList.remove("hovered");
+        });
+
         itemsPanel.appendChild(entry);
       });
     }
+
+    // ── Zoom toggle (fit to viewport) ──
+    zoomToggle.addEventListener("click", () => {
+      workspace.classList.toggle("fit-viewport");
+      zoomToggle.classList.toggle("active", workspace.classList.contains("fit-viewport"));
+      // Re-render bboxes since image size changed
+      if (imageNatW > 0) {
+        // Wait a frame for the image to reflow
+        requestAnimationFrame(() => renderBboxes());
+      }
+    });
 
     // ── Import ──
     importBtn.addEventListener("click", () => {
@@ -821,27 +945,8 @@
       if (level.name) levelNameInput.value = level.name;
       if (level.emoji) levelEmojiInput.value = level.emoji;
 
-      // If an image is already loaded we can render straight away,
-      // otherwise show a note about loading the image
-      if (imageNatW > 0) {
-        renderBboxes();
-        renderItemsList();
-      } else {
-        // Store imported items for when image loads
-        renderItemsList();
-        importError.style.color = "#4ecca3";
-        importError.textContent = level.image
-          ? `Load the image "${level.image}" using the Load Image button to see boxes.`
-          : "Load the matching image using the Load Image button to see the boxes.";
-        setTimeout(() => {
-          importError.textContent = "";
-          importError.style.color = "#e94560";
-        }, 4000);
-        importModal.classList.add("hidden");
-        return;
-      }
-
       importModal.classList.add("hidden");
+      loadLevelImage(level);
     });
 
     // ── Export ──
@@ -917,6 +1022,129 @@
     window.addEventListener("resize", () => {
       if (imageNatW > 0) renderBboxes();
     });
+
+    // ── Save to Game (localStorage) ──
+    saveToGameBtn.addEventListener("click", () => {
+      if (items.length === 0) {
+        alert("Add some items before saving.");
+        return;
+      }
+      const levelData = {
+        name: levelNameInput.value || "Untitled Level",
+        emoji: levelEmojiInput.value || "🖼️",
+        image: imageSrc || ("images/" + (imageFileName || "level.jpg")),
+        width: imageNatW,
+        height: imageNatH,
+        items: items.map(it => ({
+          name: it.name, x: it.x, y: it.y, width: it.width, height: it.height,
+        })),
+      };
+      CustomLevels.save(levelData);
+      populateStoredDropdown();
+      saveToGameBtn.textContent = "Saved!";
+      setTimeout(() => { saveToGameBtn.textContent = "Save to Game"; }, 1500);
+    });
+
+    // ── Load level dropdown (custom + built-in) ──
+    function populateStoredDropdown() {
+      const stored = CustomLevels.getAll();
+      storedDropdown.innerHTML = '<option value="">Load a level…</option>';
+
+      if (stored.length) {
+        const customGroup = document.createElement("optgroup");
+        customGroup.label = "Custom Levels";
+        stored.forEach((lvl, i) => {
+          const opt = document.createElement("option");
+          opt.value = "custom:" + i;
+          opt.textContent = (lvl.emoji || "🖼️") + " " + lvl.name + " (" + lvl.items.length + " items)";
+          customGroup.appendChild(opt);
+        });
+        storedDropdown.appendChild(customGroup);
+      }
+
+      if (builtinLevels.length) {
+        const builtinGroup = document.createElement("optgroup");
+        builtinGroup.label = "Built-in Levels";
+        builtinLevels.forEach((lvl, i) => {
+          const opt = document.createElement("option");
+          opt.value = "builtin:" + i;
+          opt.textContent = (lvl.emoji || "🖼️") + " " + lvl.name + " (" + lvl.items.length + " items)";
+          builtinGroup.appendChild(opt);
+        });
+        storedDropdown.appendChild(builtinGroup);
+      }
+    }
+
+    storedDropdown.addEventListener("change", () => {
+      const val = storedDropdown.value;
+      if (!val) return;
+
+      let level;
+      if (val.startsWith("custom:")) {
+        const stored = CustomLevels.getAll();
+        level = stored[parseInt(val.split(":")[1])];
+      } else if (val.startsWith("builtin:")) {
+        const src = builtinLevels[parseInt(val.split(":")[1])];
+        // Deep-copy so we never mutate the original; append "(Copy)" to name
+        level = JSON.parse(JSON.stringify(src));
+        level.name = level.name + " (Copy)";
+      }
+
+      if (!level) return;
+
+      // Apply level data to editor
+      items = level.items.map(it => ({
+        name: it.name,
+        x: Math.round(it.x),
+        y: Math.round(it.y),
+        width: Math.round(it.width),
+        height: Math.round(it.height),
+      }));
+      selectedIdx = -1;
+      if (level.name) levelNameInput.value = level.name;
+      if (level.emoji) levelEmojiInput.value = level.emoji;
+
+      loadLevelImage(level);
+
+      storedDropdown.value = "";
+    });
+
+    // Fetch built-in levels, then populate dropdown
+    fetch("data/levels.json")
+      .then(r => r.json())
+      .then(data => { builtinLevels = data.levels || []; populateStoredDropdown(); })
+      .catch(() => { populateStoredDropdown(); });
+
+    // ── Load level image helper (handles data URIs and relative paths) ──
+    function loadLevelImage(level) {
+      if (level.image) {
+        imageSrc = level.image;
+        editorImage.src = level.image;
+        editorImage.onload = () => {
+          imageNatW = editorImage.naturalWidth;
+          imageNatH = editorImage.naturalHeight;
+          dropZone.style.display = "none";
+          workspace.classList.remove("hidden");
+          hintText.style.display = "";
+          loadImageBtn.textContent = "Load Other Image";
+          renderBboxes();
+          renderItemsList();
+        };
+        editorImage.onerror = () => {
+          // Image path couldn't be loaded — use width/height from JSON if available
+          if (level.width && level.height) {
+            imageNatW = level.width;
+            imageNatH = level.height;
+          }
+          renderItemsList();
+        };
+      } else if (imageNatW > 0) {
+        renderBboxes();
+        renderItemsList();
+      } else {
+        renderItemsList();
+      }
+    }
 
     // ── Util ──
     function escapeHtml(str) {

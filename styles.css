@@ -80,6 +80,7 @@ body {
 }
 
 .level-card {
+  position: relative;
   background: #16213e;
   border-radius: 16px;
   overflow: hidden;
@@ -268,9 +269,16 @@ body {
 }
 
 /* ── Editor Link ─────────────────────────── */
+.menu-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
 .editor-link {
   display: inline-block;
-  margin-top: 40px;
   color: #888;
   text-decoration: none;
   font-size: 0.9rem;
@@ -278,10 +286,97 @@ body {
   padding: 8px 20px;
   border-radius: 8px;
   transition: color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
 }
 .editor-link:hover {
   color: #f5a623;
   border-color: #f5a623;
+}
+
+/* ── Custom Level Card ───────────────────── */
+.level-card.custom {
+  border-color: #4ecca3;
+}
+.level-card.custom .level-card-placeholder {
+  background: linear-gradient(135deg, #0f4a3a, #1a1a2e);
+}
+.level-card-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(185, 28, 28, 0.85);
+  color: #fff;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 2;
+}
+.level-card:hover .level-card-delete {
+  opacity: 1;
+}
+.level-card-delete:hover {
+  background: #991b1b;
+}
+
+/* ── Import Modal (home page) ────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.hidden { display: none; }
+.modal {
+  background: #16213e;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.modal h3 { color: #4ecca3; }
+.modal-desc { color: #aaa; font-size: 0.85rem; }
+.modal textarea {
+  width: 100%;
+  height: 250px;
+  background: #0d1b3e;
+  color: #eee;
+  border: 1px solid #0f3460;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8rem;
+  resize: vertical;
+}
+.modal-error { color: #e94560; font-size: 0.85rem; min-height: 1.2em; }
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.btn-secondary {
+  background: #0f3460;
+  color: #eee;
+}
+.btn-secondary:hover {
+  background: #1a4a8a;
 }
 
 /* ── Click Feedback ───────────────────────── */
@@ -332,6 +427,15 @@ body {
   letter-spacing: 1px;
   margin-bottom: 12px;
   text-align: center;
+}
+
+.items-hint {
+  font-size: 0.7rem;
+  color: #555;
+  text-transform: none;
+  letter-spacing: 0;
+  font-style: italic;
+  margin-left: 4px;
 }
 
 .items-list {
