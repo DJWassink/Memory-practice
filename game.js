@@ -361,8 +361,8 @@
     totalClicks++;
     scoreSpan.textContent = totalFound;
 
-    // Record how long this item took
-    itemFindTimes.push(Date.now() - roundStartTime);
+    // Record how long this item took (skip the first find — it includes level reading time)
+    if (totalFound > 1) itemFindTimes.push(Date.now() - roundStartTime);
     roundStartTime = Date.now(); // reset for next item
 
     // Update tag
