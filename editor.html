@@ -617,6 +617,11 @@
       // Don't draw if clicking on existing bbox or resize handle
       if (e.target.closest(".bbox")) return;
 
+      // Clicking empty canvas area — deselect any selected item
+      selectedIdx = -1;
+      renderBboxes();
+      renderItemsList();
+
       const pos = getMousePos(e);
       isDrawing = true;
       drawStart = pos;
@@ -704,6 +709,9 @@
           selectedIdx = items.length - 1;
           renderBboxes();
           renderItemsList();
+          // Auto-focus the new item's name input and select all text
+          const newInput = itemsPanel.querySelector(`.item-name-input[data-idx="${selectedIdx}"]`);
+          if (newInput) { newInput.focus(); newInput.select(); }
         }
       }
 
@@ -846,6 +854,13 @@
           items[idx].name = e.target.value;
           renderBboxes();
         });
+        nameInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            selectedIdx = -1;
+            renderBboxes();
+            renderItemsList();
+          }
+        });
         nameInput.addEventListener("focus", () => {
           selectedIdx = idx;
           renderBboxes();
@@ -878,6 +893,15 @@
         itemsPanel.appendChild(entry);
       });
     }
+
+    // ── Deselect when clicking empty space in sidebar ──
+    itemsPanel.addEventListener("click", (e) => {
+      if (!e.target.closest(".item-entry")) {
+        selectedIdx = -1;
+        renderBboxes();
+        renderItemsList();
+      }
+    });
 
     // ── Zoom toggle (fit to viewport) ──
     zoomToggle.addEventListener("click", () => {
