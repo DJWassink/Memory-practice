@@ -453,6 +453,7 @@
     // Touch support for the image
     imageContainer.addEventListener("touchend", (e) => {
       if (e.changedTouches.length === 0) return;
+      e.preventDefault(); // prevent duplicate click event on mobile
       const touch = e.changedTouches[0];
       const fakeEvent = { clientX: touch.clientX, clientY: touch.clientY };
       handleImageClick(fakeEvent);
