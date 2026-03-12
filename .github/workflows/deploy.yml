@@ -27,6 +27,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Inject commit hash
+        run: |
+          HASH=$(git rev-parse --short HEAD)
+          sed -i "s/__COMMIT_HASH__/${HASH}/g" index.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

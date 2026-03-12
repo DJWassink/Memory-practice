@@ -593,6 +593,14 @@ body {
   flex-wrap: wrap;
 }
 
+.build-hash {
+  margin-top: 24px;
+  font-size: 0.7rem;
+  color: #333;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
 /* ── Placeholder thumbnails (for levels without images) ── */
 .level-card-placeholder {
   width: 100%;
