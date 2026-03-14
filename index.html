@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Find It! - Hidden Object Game</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -26,8 +26,12 @@
     <div class="game-header">
       <button id="back-btn" class="btn btn-back">&larr; Back</button>
       <h2 id="level-title" class="level-title"></h2>
-      <div id="score-display" class="score-display">Found: <span id="score">0</span></div>
+      <div class="game-header-right">
+        <div id="score-display" class="score-display">Found: <span id="score">0</span></div>
+        <button id="fullscreen-btn" class="btn btn-fullscreen" title="Fullscreen">&#x26F6;</button>
+      </div>
     </div>
+    <button id="fullscreen-exit-btn" class="btn-fullscreen-exit" title="Exit fullscreen">&#x2716;</button>
 
     <div class="game-area">
       <div id="image-container" class="image-container">

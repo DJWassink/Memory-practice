@@ -156,6 +156,110 @@ body {
   flex-shrink: 0;
 }
 
+.game-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-fullscreen {
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #333;
+  padding: 6px 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  line-height: 1;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-fullscreen:hover {
+  color: #fff;
+  border-color: #888;
+}
+
+/* Floating exit-fullscreen button (hidden normally, shown in fullscreen) */
+.btn-fullscreen-exit {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ccc;
+  border: 1px solid #555;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.btn-fullscreen-exit:hover {
+  color: #fff;
+  border-color: #aaa;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* ── Fullscreen mode: map + item names only ── */
+/* Standard */
+#game-screen:fullscreen { background: #0d0d1a; }
+#game-screen:fullscreen .game-header { display: none; }
+#game-screen:fullscreen .game-area {
+  position: relative; padding: 0; gap: 0; height: 100%;
+  padding-top: env(safe-area-inset-top, 0);
+}
+#game-screen:fullscreen .image-container {
+  flex: 1; max-height: calc(100% - 64px); border-radius: 0; box-shadow: none; width: 100%;
+}
+#game-screen:fullscreen .items-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; max-width: 100%;
+  background: rgba(22, 33, 62, 0.85); backdrop-filter: blur(6px);
+  border-radius: 0;
+  padding: 10px 16px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0));
+}
+#game-screen:fullscreen .items-label { display: none; }
+#game-screen:fullscreen .btn-fullscreen-exit { display: block; top: calc(12px + env(safe-area-inset-top, 0)); }
+
+/* WebKit (Safari / older Chrome) */
+#game-screen:-webkit-full-screen { background: #0d0d1a; }
+#game-screen:-webkit-full-screen .game-header { display: none; }
+#game-screen:-webkit-full-screen .game-area {
+  position: relative; padding: 0; gap: 0; height: 100%;
+  padding-top: env(safe-area-inset-top, 0);
+}
+#game-screen:-webkit-full-screen .image-container {
+  flex: 1; max-height: calc(100% - 64px); border-radius: 0; box-shadow: none; width: 100%;
+}
+#game-screen:-webkit-full-screen .items-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; max-width: 100%;
+  background: rgba(22, 33, 62, 0.85); backdrop-filter: blur(6px);
+  border-radius: 0;
+  padding: 10px 16px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0));
+}
+#game-screen:-webkit-full-screen .items-label { display: none; }
+#game-screen:-webkit-full-screen .btn-fullscreen-exit { display: block; top: calc(12px + env(safe-area-inset-top, 0)); }
+
+/* Firefox */
+#game-screen:-moz-full-screen { background: #0d0d1a; }
+#game-screen:-moz-full-screen .game-header { display: none; }
+#game-screen:-moz-full-screen .game-area {
+  position: relative; padding: 0; gap: 0; height: 100%;
+  padding-top: env(safe-area-inset-top, 0);
+}
+#game-screen:-moz-full-screen .image-container {
+  flex: 1; max-height: calc(100% - 64px); border-radius: 0; box-shadow: none; width: 100%;
+}
+#game-screen:-moz-full-screen .items-bar {
+  position: absolute; bottom: 0; left: 0; right: 0; max-width: 100%;
+  background: rgba(22, 33, 62, 0.85); backdrop-filter: blur(6px);
+  border-radius: 0;
+  padding: 10px 16px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom, 0));
+}
+#game-screen:-moz-full-screen .items-label { display: none; }
+#game-screen:-moz-full-screen .btn-fullscreen-exit { display: block; top: calc(12px + env(safe-area-inset-top, 0)); }
 .level-title {
   font-size: 1.3rem;
 }
@@ -178,6 +282,10 @@ body {
   }
   .btn-back {
     padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  .btn-fullscreen {
+    padding: 5px 8px;
     font-size: 0.85rem;
   }
 }
@@ -242,10 +350,6 @@ body {
 
 .highlights-layer {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   pointer-events: none;
 }
 

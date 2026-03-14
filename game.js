@@ -33,6 +33,8 @@
   const roundComplete     = document.getElementById("round-complete");
   const levelComplete     = document.getElementById("level-complete");
   const backBtn           = document.getElementById("back-btn");
+  const fullscreenBtn     = document.getElementById("fullscreen-btn");
+  const fullscreenExitBtn = document.getElementById("fullscreen-exit-btn");
   const nextRoundBtn      = document.getElementById("next-round-btn");
   const backToMenuBtn     = document.getElementById("back-to-menu-btn");
   const redoLevelBtn      = document.getElementById("redo-level-btn");
@@ -287,9 +289,10 @@
       const box = document.createElement("div");
       box.className = "highlight-box";
       box.dataset.index = idx;
-      positionHighlight(box, item);
       highlightsLayer.appendChild(box);
     });
+    // Sync after the image has reflowed
+    requestAnimationFrame(() => repositionAllHighlights());
   }
 
   function positionHighlight(box, item) {
@@ -304,7 +307,26 @@
     box.style.height = `${item.height * scaleY}px`;
   }
 
+  function syncHighlightsLayer() {
+    const containerRect = imageContainer.getBoundingClientRect();
+    const imgRect = gameImage.getBoundingClientRect();
+    highlightsLayer.style.left   = `${imgRect.left - containerRect.left}px`;
+    highlightsLayer.style.top    = `${imgRect.top - containerRect.top}px`;
+    highlightsLayer.style.width  = `${imgRect.width}px`;
+    highlightsLayer.style.height = `${imgRect.height}px`;
+  }
+
+  function repositionAllHighlights() {
+    if (!currentLevel) return;
+    syncHighlightsLayer();
+    currentItems.forEach((item, idx) => {
+      const box = highlightsLayer.querySelector(`[data-index="${idx}"]`);
+      if (box) positionHighlight(box, item);
+    });
+  }
+
   function showHighlight(idx) {
+    syncHighlightsLayer();
     const box = highlightsLayer.querySelector(`[data-index="${idx}"]`);
     if (box && !box.classList.contains("found")) {
       box.classList.add("visible");
@@ -350,11 +372,11 @@
 
     if (hitIdx >= 0) {
       markFound(hitIdx);
-      showClickFeedback(clickX, clickY, true);
+      showClickFeedback(e, true);
     } else {
       wrongClicks++;
       totalClicks++;
-      showClickFeedback(clickX, clickY, false);
+      showClickFeedback(e, false);
     }
   }
 
@@ -389,7 +411,10 @@
     }
   }
 
-  function showClickFeedback(x, y, correct) {
+  function showClickFeedback(e, correct) {
+    const containerRect = imageContainer.getBoundingClientRect();
+    const x = e.clientX - containerRect.left;
+    const y = e.clientY - containerRect.top;
     clickFeedback.className = "click-feedback";
     clickFeedback.style.left = `${x}px`;
     clickFeedback.style.top = `${y}px`;
@@ -453,6 +478,23 @@
     nextRoundBtn.addEventListener("click", () => pickNewRound());
     imageContainer.addEventListener("click", handleImageClick);
 
+    fullscreenBtn.addEventListener("click", () => {
+      const req = gameScreen.requestFullscreen || gameScreen.mozRequestFullScreen;
+      req && req.call(gameScreen);
+    });
+    fullscreenExitBtn.addEventListener("click", () => {
+      const exit = document.exitFullscreen || document.mozCancelFullScreen;
+      exit && exit.call(document);
+    });
+    const onFsChange = () => {
+      const fs = !!(document.fullscreenElement || document.mozFullScreenElement);
+      fullscreenBtn.style.display = fs ? "none" : "";
+      // Wait for reflow then reposition highlights
+      requestAnimationFrame(() => repositionAllHighlights());
+    };
+    document.addEventListener("fullscreenchange", onFsChange);
+    document.addEventListener("mozfullscreenchange", onFsChange);
+
     // Touch support for the image
     imageContainer.addEventListener("touchend", (e) => {
       if (e.changedTouches.length === 0) return;
@@ -463,13 +505,7 @@
     });
 
     // Re-position highlights on resize
-    window.addEventListener("resize", () => {
-      if (!currentLevel) return;
-      currentItems.forEach((item, idx) => {
-        const box = highlightsLayer.querySelector(`[data-index="${idx}"]`);
-        if (box) positionHighlight(box, item);
-      });
-    });
+    window.addEventListener("resize", () => repositionAllHighlights());
   }
 
   // ── Util ─────────────────────────────────
