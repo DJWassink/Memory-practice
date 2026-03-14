@@ -30,7 +30,14 @@ jobs:
       - name: Inject commit hash
         run: |
           HASH=$(git rev-parse --short HEAD)
+          # Expose commit hash in the UI
           sed -i "s/__COMMIT_HASH__/${HASH}/g" index.html
+          # Cache-bust CSS and JS assets in all HTML files
+          sed -i \
+            -e "s/styles\.css\"/styles.css?v=${HASH}\"/g" \
+            -e "s/custom-levels\.js\"/custom-levels.js?v=${HASH}\"/g" \
+            -e "s/game\.js\"/game.js?v=${HASH}\"/g" \
+            index.html editor.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
