@@ -1,7 +1,1261 @@
 {
     "levels": [
         {
-            "name": "Bedroom",
+            "name": "Frontyard",
+            "emoji": "🏡",
+            "image": "images/frontyard.png",
+            "width": 935,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Map",
+                    "x": 508,
+                    "y": 1329,
+                    "width": 131,
+                    "height": 119
+                },
+                {
+                    "name": "Feather",
+                    "x": 371,
+                    "y": 1024,
+                    "width": 77,
+                    "height": 107
+                },
+                {
+                    "name": "Balloons",
+                    "x": 844,
+                    "y": 467,
+                    "width": 68,
+                    "height": 149
+                },
+                {
+                    "name": "Rubber Duck",
+                    "x": 240,
+                    "y": 1012,
+                    "width": 77,
+                    "height": 109
+                },
+                {
+                    "name": "Corn",
+                    "x": 634,
+                    "y": 970,
+                    "width": 82,
+                    "height": 102
+                },
+                {
+                    "name": "Scarf",
+                    "x": 662,
+                    "y": 1040,
+                    "width": 194,
+                    "height": 93
+                },
+                {
+                    "name": "Wing",
+                    "x": 72,
+                    "y": 628,
+                    "width": 124,
+                    "height": 130
+                },
+                {
+                    "name": "Butterfly",
+                    "x": 816,
+                    "y": 793,
+                    "width": 103,
+                    "height": 123
+                },
+                {
+                    "name": "Bell",
+                    "x": 161,
+                    "y": 293,
+                    "width": 75,
+                    "height": 100
+                },
+                {
+                    "name": "Starfish",
+                    "x": 124,
+                    "y": 849,
+                    "width": 135,
+                    "height": 95
+                },
+                {
+                    "name": "Drifting bottle",
+                    "x": 72,
+                    "y": 1075,
+                    "width": 166,
+                    "height": 102
+                },
+                {
+                    "name": "Sunflower",
+                    "x": 508,
+                    "y": 528,
+                    "width": 114,
+                    "height": 89
+                },
+                {
+                    "name": "Canned Food",
+                    "x": 727,
+                    "y": 1180,
+                    "width": 133,
+                    "height": 100
+                },
+                {
+                    "name": "Spider web",
+                    "x": 674,
+                    "y": 397,
+                    "width": 114,
+                    "height": 91
+                },
+                {
+                    "name": "Backpack",
+                    "x": 562,
+                    "y": 1183,
+                    "width": 149,
+                    "height": 177
+                },
+                {
+                    "name": "Camera",
+                    "x": 0,
+                    "y": 1232,
+                    "width": 133,
+                    "height": 126
+                },
+                {
+                    "name": "Ball",
+                    "x": 730,
+                    "y": 1391,
+                    "width": 107,
+                    "height": 102
+                },
+                {
+                    "name": "Banner",
+                    "x": 145,
+                    "y": 430,
+                    "width": 89,
+                    "height": 172
+                },
+                {
+                    "name": "Hot air balloon",
+                    "x": 359,
+                    "y": 38,
+                    "width": 147,
+                    "height": 196
+                },
+                {
+                    "name": "Chimney",
+                    "x": 527,
+                    "y": 198,
+                    "width": 86,
+                    "height": 109
+                },
+                {
+                    "name": "Tower",
+                    "x": 305,
+                    "y": 243,
+                    "width": 89,
+                    "height": 121
+                },
+                {
+                    "name": "Rope",
+                    "x": 415,
+                    "y": 859,
+                    "width": 131,
+                    "height": 121
+                },
+                {
+                    "name": "Skylight",
+                    "x": 515,
+                    "y": 321,
+                    "width": 110,
+                    "height": 119
+                }
+            ]
+        },
+        {
+            "name": "City hall",
+            "emoji": "🏫",
+            "image": "images/cityhall.png",
+            "width": 953,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Parachutte",
+                    "x": 109,
+                    "y": 86,
+                    "width": 114,
+                    "height": 145
+                },
+                {
+                    "name": "Airship",
+                    "x": 806,
+                    "y": 21,
+                    "width": 74,
+                    "height": 112
+                },
+                {
+                    "name": "Tower",
+                    "x": 34,
+                    "y": 300,
+                    "width": 93,
+                    "height": 80
+                },
+                {
+                    "name": "N",
+                    "x": 288,
+                    "y": 221,
+                    "width": 99,
+                    "height": 84
+                },
+                {
+                    "name": "Clock",
+                    "x": 433,
+                    "y": 223,
+                    "width": 91,
+                    "height": 76
+                },
+                {
+                    "name": "Ladder",
+                    "x": 581,
+                    "y": 263,
+                    "width": 90,
+                    "height": 72
+                },
+                {
+                    "name": "Pipe",
+                    "x": 278,
+                    "y": 311,
+                    "width": 91,
+                    "height": 124
+                },
+                {
+                    "name": "Star",
+                    "x": 446,
+                    "y": 366,
+                    "width": 69,
+                    "height": 48
+                },
+                {
+                    "name": "Vine",
+                    "x": 595,
+                    "y": 378,
+                    "width": 77,
+                    "height": 61
+                },
+                {
+                    "name": "Chimney",
+                    "x": 814,
+                    "y": 385,
+                    "width": 95,
+                    "height": 74
+                },
+                {
+                    "name": "8",
+                    "x": 168,
+                    "y": 439,
+                    "width": 65,
+                    "height": 84
+                },
+                {
+                    "name": "Flag garland",
+                    "x": 423,
+                    "y": 427,
+                    "width": 103,
+                    "height": 90
+                },
+                {
+                    "name": "Tree",
+                    "x": 30,
+                    "y": 562,
+                    "width": 91,
+                    "height": 82
+                },
+                {
+                    "name": "Shield",
+                    "x": 206,
+                    "y": 505,
+                    "width": 97,
+                    "height": 120
+                },
+                {
+                    "name": "Chandelier",
+                    "x": 417,
+                    "y": 530,
+                    "width": 103,
+                    "height": 90
+                },
+                {
+                    "name": "Twin sword",
+                    "x": 658,
+                    "y": 557,
+                    "width": 80,
+                    "height": 76
+                },
+                {
+                    "name": "Balloon",
+                    "x": 806,
+                    "y": 574,
+                    "width": 120,
+                    "height": 101
+                },
+                {
+                    "name": "Searchlight",
+                    "x": 29,
+                    "y": 726,
+                    "width": 74,
+                    "height": 63
+                },
+                {
+                    "name": "Harp",
+                    "x": 86,
+                    "y": 654,
+                    "width": 114,
+                    "height": 101
+                },
+                {
+                    "name": "Nameplate",
+                    "x": 210,
+                    "y": 661,
+                    "width": 109,
+                    "height": 88
+                },
+                {
+                    "name": "Globe",
+                    "x": 421,
+                    "y": 682,
+                    "width": 109,
+                    "height": 93
+                },
+                {
+                    "name": "Swan",
+                    "x": 709,
+                    "y": 648,
+                    "width": 76,
+                    "height": 103
+                },
+                {
+                    "name": "Butterfly",
+                    "x": 646,
+                    "y": 728,
+                    "width": 57,
+                    "height": 74
+                },
+                {
+                    "name": "Four leaf clover",
+                    "x": 835,
+                    "y": 701,
+                    "width": 74,
+                    "height": 67
+                },
+                {
+                    "name": "Motorcycle",
+                    "x": 38,
+                    "y": 820,
+                    "width": 103,
+                    "height": 90
+                },
+                {
+                    "name": "Flower",
+                    "x": 206,
+                    "y": 751,
+                    "width": 84,
+                    "height": 63
+                },
+                {
+                    "name": "Bowknot",
+                    "x": 217,
+                    "y": 842,
+                    "width": 99,
+                    "height": 95
+                },
+                {
+                    "name": "Crack",
+                    "x": 787,
+                    "y": 787,
+                    "width": 72,
+                    "height": 55
+                },
+                {
+                    "name": "Giftbox",
+                    "x": 732,
+                    "y": 840,
+                    "width": 86,
+                    "height": 70
+                },
+                {
+                    "name": "Lightning",
+                    "x": 612,
+                    "y": 886,
+                    "width": 143,
+                    "height": 103
+                },
+                {
+                    "name": "Camera",
+                    "x": 547,
+                    "y": 831,
+                    "width": 88,
+                    "height": 72
+                },
+                {
+                    "name": "Sun",
+                    "x": 415,
+                    "y": 886,
+                    "width": 126,
+                    "height": 105
+                },
+                {
+                    "name": "Suitcase",
+                    "x": 242,
+                    "y": 962,
+                    "width": 90,
+                    "height": 74
+                },
+                {
+                    "name": "Scarf",
+                    "x": 177,
+                    "y": 1027,
+                    "width": 74,
+                    "height": 55
+                },
+                {
+                    "name": "Newspaper",
+                    "x": 345,
+                    "y": 1008,
+                    "width": 141,
+                    "height": 109
+                },
+                {
+                    "name": "Crow",
+                    "x": 835,
+                    "y": 938,
+                    "width": 76,
+                    "height": 60
+                },
+                {
+                    "name": "Medal",
+                    "x": 131,
+                    "y": 1130,
+                    "width": 107,
+                    "height": 91
+                },
+                {
+                    "name": "Windmill",
+                    "x": 313,
+                    "y": 1117,
+                    "width": 130,
+                    "height": 109
+                },
+                {
+                    "name": "Wrench",
+                    "x": 583,
+                    "y": 1071,
+                    "width": 88,
+                    "height": 74
+                },
+                {
+                    "name": "Goggles",
+                    "x": 722,
+                    "y": 1031,
+                    "width": 95,
+                    "height": 90
+                },
+                {
+                    "name": "Scroll",
+                    "x": 110,
+                    "y": 1256,
+                    "width": 90,
+                    "height": 70
+                },
+                {
+                    "name": "Envelope",
+                    "x": 347,
+                    "y": 1229,
+                    "width": 99,
+                    "height": 124
+                },
+                {
+                    "name": "Compass",
+                    "x": 524,
+                    "y": 1214,
+                    "width": 124,
+                    "height": 107
+                },
+                {
+                    "name": "Key",
+                    "x": 650,
+                    "y": 1138,
+                    "width": 128,
+                    "height": 107
+                },
+                {
+                    "name": "Diamond",
+                    "x": 852,
+                    "y": 1164,
+                    "width": 90,
+                    "height": 112
+                },
+                {
+                    "name": "Cat",
+                    "x": 204,
+                    "y": 1326,
+                    "width": 95,
+                    "height": 76
+                },
+                {
+                    "name": "Spring",
+                    "x": 368,
+                    "y": 1353,
+                    "width": 90,
+                    "height": 112
+                },
+                {
+                    "name": "Walking stick",
+                    "x": 600,
+                    "y": 1301,
+                    "width": 109,
+                    "height": 72
+                },
+                {
+                    "name": "Briefcase",
+                    "x": 623,
+                    "y": 1366,
+                    "width": 154,
+                    "height": 114
+                },
+                {
+                    "name": "Gear",
+                    "x": 810,
+                    "y": 1374,
+                    "width": 107,
+                    "height": 86
+                }
+            ]
+        },
+        {
+            "name": "Courtroom",
+            "emoji": "🏛️",
+            "image": "images/courtroom.png",
+            "width": 948,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Hanging banner",
+                    "x": 49,
+                    "y": 151,
+                    "width": 114,
+                    "height": 93
+                },
+                {
+                    "name": "Wheat",
+                    "x": 302,
+                    "y": 71,
+                    "width": 128,
+                    "height": 101
+                },
+                {
+                    "name": "Sword",
+                    "x": 808,
+                    "y": 147,
+                    "width": 95,
+                    "height": 122
+                },
+                {
+                    "name": "Balance",
+                    "x": 580,
+                    "y": 174,
+                    "width": 152,
+                    "height": 122
+                },
+                {
+                    "name": "Shield",
+                    "x": 481,
+                    "y": 240,
+                    "width": 97,
+                    "height": 82
+                },
+                {
+                    "name": "Statue",
+                    "x": 357,
+                    "y": 279,
+                    "width": 103,
+                    "height": 128
+                },
+                {
+                    "name": "Clock",
+                    "x": 125,
+                    "y": 399,
+                    "width": 97,
+                    "height": 84
+                },
+                {
+                    "name": "Hat",
+                    "x": 26,
+                    "y": 471,
+                    "width": 86,
+                    "height": 67
+                },
+                {
+                    "name": "Mask",
+                    "x": 188,
+                    "y": 494,
+                    "width": 84,
+                    "height": 103
+                },
+                {
+                    "name": "Lamp",
+                    "x": 289,
+                    "y": 511,
+                    "width": 103,
+                    "height": 86
+                },
+                {
+                    "name": "Sun",
+                    "x": 551,
+                    "y": 378,
+                    "width": 93,
+                    "height": 93
+                },
+                {
+                    "name": "Curtain",
+                    "x": 567,
+                    "y": 534,
+                    "width": 160,
+                    "height": 126
+                },
+                {
+                    "name": "Thermometer",
+                    "x": 725,
+                    "y": 551,
+                    "width": 68,
+                    "height": 133
+                },
+                {
+                    "name": "Shell",
+                    "x": 808,
+                    "y": 503,
+                    "width": 74,
+                    "height": 67
+                },
+                {
+                    "name": "Branch",
+                    "x": 780,
+                    "y": 633,
+                    "width": 120,
+                    "height": 103
+                },
+                {
+                    "name": "Hourglass",
+                    "x": 36,
+                    "y": 589,
+                    "width": 74,
+                    "height": 91
+                },
+                {
+                    "name": "Ship",
+                    "x": 190,
+                    "y": 620,
+                    "width": 89,
+                    "height": 65
+                },
+                {
+                    "name": "Photo",
+                    "x": 287,
+                    "y": 625,
+                    "width": 107,
+                    "height": 120
+                },
+                {
+                    "name": "Trophy",
+                    "x": 182,
+                    "y": 682,
+                    "width": 112,
+                    "height": 91
+                },
+                {
+                    "name": "Ladder",
+                    "x": 100,
+                    "y": 688,
+                    "width": 73,
+                    "height": 114
+                },
+                {
+                    "name": "Coat",
+                    "x": 24,
+                    "y": 780,
+                    "width": 107,
+                    "height": 137
+                },
+                {
+                    "name": "Typewriter",
+                    "x": 237,
+                    "y": 818,
+                    "width": 101,
+                    "height": 82
+                },
+                {
+                    "name": "Footprint",
+                    "x": 306,
+                    "y": 774,
+                    "width": 67,
+                    "height": 59
+                },
+                {
+                    "name": "Globe",
+                    "x": 361,
+                    "y": 764,
+                    "width": 93,
+                    "height": 116
+                },
+                {
+                    "name": "Crutch",
+                    "x": 483,
+                    "y": 711,
+                    "width": 93,
+                    "height": 80
+                },
+                {
+                    "name": "Gavel",
+                    "x": 477,
+                    "y": 795,
+                    "width": 78,
+                    "height": 80
+                },
+                {
+                    "name": "Ink bottle",
+                    "x": 588,
+                    "y": 780,
+                    "width": 86,
+                    "height": 74
+                },
+                {
+                    "name": "Pigeon",
+                    "x": 666,
+                    "y": 774,
+                    "width": 80,
+                    "height": 63
+                },
+                {
+                    "name": "Plant",
+                    "x": 679,
+                    "y": 848,
+                    "width": 84,
+                    "height": 114
+                },
+                {
+                    "name": "Umbrella",
+                    "x": 768,
+                    "y": 882,
+                    "width": 69,
+                    "height": 200
+                },
+                {
+                    "name": "Snowflake",
+                    "x": 511,
+                    "y": 900,
+                    "width": 80,
+                    "height": 74
+                },
+                {
+                    "name": "Plane",
+                    "x": 346,
+                    "y": 884,
+                    "width": 109,
+                    "height": 90
+                },
+                {
+                    "name": "Ty",
+                    "x": 68,
+                    "y": 901,
+                    "width": 110,
+                    "height": 103
+                },
+                {
+                    "name": "Backpack",
+                    "x": 211,
+                    "y": 1002,
+                    "width": 141,
+                    "height": 177
+                },
+                {
+                    "name": "Dagger",
+                    "x": 66,
+                    "y": 1193,
+                    "width": 122,
+                    "height": 107
+                },
+                {
+                    "name": "Binoculars",
+                    "x": 24,
+                    "y": 1385,
+                    "width": 97,
+                    "height": 103
+                },
+                {
+                    "name": "Gold coin",
+                    "x": 125,
+                    "y": 1345,
+                    "width": 118,
+                    "height": 99
+                },
+                {
+                    "name": "Sack",
+                    "x": 220,
+                    "y": 1216,
+                    "width": 97,
+                    "height": 139
+                },
+                {
+                    "name": "Stamp",
+                    "x": 296,
+                    "y": 1355,
+                    "width": 116,
+                    "height": 105
+                },
+                {
+                    "name": "Handcuff",
+                    "x": 355,
+                    "y": 1079,
+                    "width": 99,
+                    "height": 95
+                },
+                {
+                    "name": "Water bag",
+                    "x": 361,
+                    "y": 1220,
+                    "width": 145,
+                    "height": 122
+                },
+                {
+                    "name": "Shoe",
+                    "x": 456,
+                    "y": 1025,
+                    "width": 118,
+                    "height": 103
+                },
+                {
+                    "name": "Scroll",
+                    "x": 599,
+                    "y": 1025,
+                    "width": 97,
+                    "height": 76
+                },
+                {
+                    "name": "Wrench",
+                    "x": 498,
+                    "y": 1149,
+                    "width": 116,
+                    "height": 76
+                },
+                {
+                    "name": "Bandage",
+                    "x": 502,
+                    "y": 1237,
+                    "width": 86,
+                    "height": 80
+                },
+                {
+                    "name": "Compass",
+                    "x": 603,
+                    "y": 1109,
+                    "width": 116,
+                    "height": 69
+                },
+                {
+                    "name": "Key",
+                    "x": 700,
+                    "y": 1221,
+                    "width": 99,
+                    "height": 116
+                },
+                {
+                    "name": "Magnifier",
+                    "x": 797,
+                    "y": 1246,
+                    "width": 116,
+                    "height": 99
+                },
+                {
+                    "name": "Goggle",
+                    "x": 683,
+                    "y": 1349,
+                    "width": 164,
+                    "height": 133
+                },
+                {
+                    "name": "Diamond",
+                    "x": 837,
+                    "y": 1341,
+                    "width": 87,
+                    "height": 90
+                }
+            ]
+        },
+        {
+            "name": "Kitchen",
+            "emoji": "👨🏻‍🍳",
+            "image": "images/kitchen.png",
+            "width": 946,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Pipe",
+                    "x": 21,
+                    "y": 21,
+                    "width": 156,
+                    "height": 293
+                },
+                {
+                    "name": "Spider web",
+                    "x": 210,
+                    "y": 65,
+                    "width": 89,
+                    "height": 112
+                },
+                {
+                    "name": "Mosse Statue",
+                    "x": 248,
+                    "y": 237,
+                    "width": 93,
+                    "height": 130
+                },
+                {
+                    "name": "Hole",
+                    "x": 493,
+                    "y": 149,
+                    "width": 112,
+                    "height": 97
+                },
+                {
+                    "name": "Y",
+                    "x": 630,
+                    "y": 113,
+                    "width": 101,
+                    "height": 90
+                },
+                {
+                    "name": "Snowflake",
+                    "x": 824,
+                    "y": 282,
+                    "width": 86,
+                    "height": 91
+                },
+                {
+                    "name": "Sausage",
+                    "x": 680,
+                    "y": 332,
+                    "width": 80,
+                    "height": 135
+                },
+                {
+                    "name": "Garlic",
+                    "x": 558,
+                    "y": 376,
+                    "width": 74,
+                    "height": 99
+                },
+                {
+                    "name": "Mouse",
+                    "x": 480,
+                    "y": 338,
+                    "width": 80,
+                    "height": 76
+                },
+                {
+                    "name": "Turkey",
+                    "x": 356,
+                    "y": 463,
+                    "width": 86,
+                    "height": 122
+                },
+                {
+                    "name": "Vase",
+                    "x": 236,
+                    "y": 456,
+                    "width": 103,
+                    "height": 130
+                },
+                {
+                    "name": "Bird",
+                    "x": 82,
+                    "y": 505,
+                    "width": 103,
+                    "height": 97
+                },
+                {
+                    "name": "Tree",
+                    "x": 61,
+                    "y": 412,
+                    "width": 86,
+                    "height": 265
+                },
+                {
+                    "name": "Stain",
+                    "x": 86,
+                    "y": 707,
+                    "width": 89,
+                    "height": 78
+                },
+                {
+                    "name": "Pot",
+                    "x": 318,
+                    "y": 620,
+                    "width": 97,
+                    "height": 80
+                },
+                {
+                    "name": "Tomato",
+                    "x": 421,
+                    "y": 631,
+                    "width": 59,
+                    "height": 67
+                },
+                {
+                    "name": "Barrel",
+                    "x": 493,
+                    "y": 608,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Whisk",
+                    "x": 708,
+                    "y": 528,
+                    "width": 59,
+                    "height": 91
+                },
+                {
+                    "name": "Flame",
+                    "x": 821,
+                    "y": 574,
+                    "width": 103,
+                    "height": 97
+                },
+                {
+                    "name": "Corn",
+                    "x": 838,
+                    "y": 677,
+                    "width": 93,
+                    "height": 57
+                },
+                {
+                    "name": "Rolling pin",
+                    "x": 678,
+                    "y": 677,
+                    "width": 85,
+                    "height": 61
+                },
+                {
+                    "name": "Curtain",
+                    "x": 531,
+                    "y": 694,
+                    "width": 57,
+                    "height": 72
+                },
+                {
+                    "name": "Pumpkin",
+                    "x": 436,
+                    "y": 701,
+                    "width": 76,
+                    "height": 67
+                },
+                {
+                    "name": "Frying pan",
+                    "x": 404,
+                    "y": 776,
+                    "width": 116,
+                    "height": 67
+                },
+                {
+                    "name": "Broom",
+                    "x": 173,
+                    "y": 715,
+                    "width": 124,
+                    "height": 101
+                },
+                {
+                    "name": "Wood pile",
+                    "x": 162,
+                    "y": 812,
+                    "width": 86,
+                    "height": 65
+                },
+                {
+                    "name": "Candle",
+                    "x": 25,
+                    "y": 821,
+                    "width": 103,
+                    "height": 150
+                },
+                {
+                    "name": "Cup",
+                    "x": 132,
+                    "y": 877,
+                    "width": 97,
+                    "height": 80
+                },
+                {
+                    "name": "Cheese",
+                    "x": 236,
+                    "y": 865,
+                    "width": 97,
+                    "height": 80
+                },
+                {
+                    "name": "Fish bone",
+                    "x": 404,
+                    "y": 873,
+                    "width": 118,
+                    "height": 78
+                },
+                {
+                    "name": "Plant",
+                    "x": 554,
+                    "y": 821,
+                    "width": 88,
+                    "height": 95
+                },
+                {
+                    "name": "Spatula",
+                    "x": 655,
+                    "y": 736,
+                    "width": 46,
+                    "height": 114
+                },
+                {
+                    "name": "Scissors",
+                    "x": 725,
+                    "y": 741,
+                    "width": 82,
+                    "height": 112
+                },
+                {
+                    "name": "Basket",
+                    "x": 836,
+                    "y": 901,
+                    "width": 91,
+                    "height": 97
+                },
+                {
+                    "name": "Fork",
+                    "x": 802,
+                    "y": 966,
+                    "width": 78,
+                    "height": 67
+                },
+                {
+                    "name": "Apple",
+                    "x": 746,
+                    "y": 877,
+                    "width": 78,
+                    "height": 69
+                },
+                {
+                    "name": "Bell",
+                    "x": 630,
+                    "y": 928,
+                    "width": 89,
+                    "height": 78
+                },
+                {
+                    "name": "Pork Chop",
+                    "x": 705,
+                    "y": 987,
+                    "width": 91,
+                    "height": 84
+                },
+                {
+                    "name": "Heart",
+                    "x": 183,
+                    "y": 1048,
+                    "width": 82,
+                    "height": 74
+                },
+                {
+                    "name": "Jam",
+                    "x": 15,
+                    "y": 1147,
+                    "width": 129,
+                    "height": 124
+                },
+                {
+                    "name": "Maple leaf",
+                    "x": 54,
+                    "y": 1406,
+                    "width": 122,
+                    "height": 90
+                },
+                {
+                    "name": "Pie",
+                    "x": 158,
+                    "y": 1229,
+                    "width": 211,
+                    "height": 145
+                },
+                {
+                    "name": "Loaf of bread",
+                    "x": 390,
+                    "y": 1029,
+                    "width": 97,
+                    "height": 86
+                },
+                {
+                    "name": "Milk",
+                    "x": 486,
+                    "y": 1054,
+                    "width": 103,
+                    "height": 86
+                },
+                {
+                    "name": "Glove",
+                    "x": 670,
+                    "y": 1141,
+                    "width": 114,
+                    "height": 107
+                },
+                {
+                    "name": "Lamp",
+                    "x": 821,
+                    "y": 1147,
+                    "width": 107,
+                    "height": 95
+                },
+                {
+                    "name": "Backpack",
+                    "x": 510,
+                    "y": 1220,
+                    "width": 129,
+                    "height": 112
+                },
+                {
+                    "name": "Gold coin",
+                    "x": 170,
+                    "y": 1145,
+                    "width": 101,
+                    "height": 80
+                },
+                {
+                    "name": "Book",
+                    "x": 434,
+                    "y": 1340,
+                    "width": 154,
+                    "height": 131
+                },
+                {
+                    "name": "Shoe Print",
+                    "x": 693,
+                    "y": 1349,
+                    "width": 131,
+                    "height": 99
+                },
+                {
+                    "name": "Pouch",
+                    "x": 529,
+                    "y": 757,
+                    "width": 70,
+                    "height": 80
+                }
+            ]
+        },
+        {
+            "name": "Kid's bedroom",
             "emoji": "🛏️",
             "image": "images/bedroom.png",
             "width": 950,
@@ -360,172 +1614,1797 @@
             ]
         },
         {
-            "name": "Garden",
-            "emoji": "🌳",
-            "image": "images/garden.png",
-            "width": 935,
+            "name": "Lumberyard",
+            "emoji": "🪵",
+            "image": "images/lumberyard.png",
+            "width": 946,
             "height": 1600,
             "items": [
                 {
-                    "name": "Map",
-                    "x": 508,
-                    "y": 1329,
-                    "width": 131,
-                    "height": 119
-                },
-                {
-                    "name": "Feather",
-                    "x": 371,
-                    "y": 1024,
-                    "width": 77,
-                    "height": 107
-                },
-                {
-                    "name": "Balloons",
-                    "x": 844,
-                    "y": 467,
-                    "width": 68,
-                    "height": 149
-                },
-                {
-                    "name": "Rubber Duck",
-                    "x": 240,
-                    "y": 1012,
-                    "width": 77,
-                    "height": 109
-                },
-                {
-                    "name": "Corn",
-                    "x": 634,
-                    "y": 970,
-                    "width": 82,
-                    "height": 102
+                    "name": "Arrow sign",
+                    "x": 236,
+                    "y": 105,
+                    "width": 120,
+                    "height": 103
                 },
                 {
                     "name": "Scarf",
-                    "x": 662,
-                    "y": 1040,
-                    "width": 194,
-                    "height": 93
+                    "x": 114,
+                    "y": 187,
+                    "width": 107,
+                    "height": 196
                 },
                 {
-                    "name": "Wing",
-                    "x": 72,
-                    "y": 628,
-                    "width": 124,
+                    "name": "Bird",
+                    "x": 560,
+                    "y": 31,
+                    "width": 158,
+                    "height": 139
+                },
+                {
+                    "name": "Hot air balloon",
+                    "x": 743,
+                    "y": 20,
+                    "width": 99,
+                    "height": 162
+                },
+                {
+                    "name": "Watchtower",
+                    "x": 267,
+                    "y": 254,
+                    "width": 106,
+                    "height": 171
+                },
+                {
+                    "name": "Flare",
+                    "x": 478,
+                    "y": 189,
+                    "width": 206,
                     "height": 130
                 },
                 {
-                    "name": "Butterfly",
-                    "x": 816,
-                    "y": 793,
-                    "width": 103,
-                    "height": 123
+                    "name": "Wind cone",
+                    "x": 805,
+                    "y": 296,
+                    "width": 99,
+                    "height": 118
+                },
+                {
+                    "name": "Windmill",
+                    "x": 588,
+                    "y": 237,
+                    "width": 148,
+                    "height": 328
+                },
+                {
+                    "name": "Axe",
+                    "x": 379,
+                    "y": 448,
+                    "width": 133,
+                    "height": 99
                 },
                 {
                     "name": "Bell",
-                    "x": 161,
-                    "y": 293,
-                    "width": 75,
-                    "height": 100
+                    "x": 36,
+                    "y": 440,
+                    "width": 89,
+                    "height": 110
                 },
                 {
-                    "name": "Starfish",
-                    "x": 124,
-                    "y": 849,
-                    "width": 135,
-                    "height": 95
+                    "name": "Hammer",
+                    "x": 236,
+                    "y": 505,
+                    "width": 95,
+                    "height": 69
                 },
                 {
-                    "name": "Drifting bottle",
-                    "x": 72,
-                    "y": 1075,
-                    "width": 166,
-                    "height": 102
+                    "name": "Bone",
+                    "x": 153,
+                    "y": 540,
+                    "width": 95,
+                    "height": 70
                 },
                 {
-                    "name": "Sunflower",
-                    "x": 508,
-                    "y": 528,
+                    "name": "Aeroplane",
+                    "x": 271,
+                    "y": 599,
+                    "width": 103,
+                    "height": 78
+                },
+                {
+                    "name": "Glass bottle",
+                    "x": 318,
+                    "y": 665,
+                    "width": 105,
+                    "height": 72
+                },
+                {
+                    "name": "Moose",
+                    "x": 488,
+                    "y": 574,
+                    "width": 108,
+                    "height": 129
+                },
+                {
+                    "name": "F",
+                    "x": 752,
+                    "y": 437,
+                    "width": 76,
+                    "height": 78
+                },
+                {
+                    "name": "Flower",
+                    "x": 803,
+                    "y": 494,
+                    "width": 99,
+                    "height": 84
+                },
+                {
+                    "name": "Ladder",
+                    "x": 861,
+                    "y": 625,
+                    "width": 67,
+                    "height": 156
+                },
+                {
+                    "name": "Mailbox",
+                    "x": 750,
+                    "y": 665,
+                    "width": 74,
+                    "height": 91
+                },
+                {
+                    "name": "Snowman",
+                    "x": 617,
+                    "y": 671,
+                    "width": 76,
+                    "height": 101
+                },
+                {
+                    "name": "Pouch",
+                    "x": 665,
+                    "y": 772,
+                    "width": 118,
+                    "height": 93
+                },
+                {
+                    "name": "Boomerang",
+                    "x": 23,
+                    "y": 700,
+                    "width": 97,
+                    "height": 86
+                },
+                {
+                    "name": "Heart",
+                    "x": 128,
+                    "y": 711,
+                    "width": 97,
+                    "height": 105
+                },
+                {
+                    "name": "Triangle",
+                    "x": 242,
+                    "y": 722,
                     "width": 114,
-                    "height": 89
+                    "height": 58
                 },
                 {
-                    "name": "Canned Food",
-                    "x": 727,
-                    "y": 1180,
-                    "width": 133,
-                    "height": 100
+                    "name": "Whipe",
+                    "x": 350,
+                    "y": 820,
+                    "width": 59,
+                    "height": 107
                 },
                 {
-                    "name": "Spider web",
-                    "x": 674,
-                    "y": 397,
+                    "name": "Haystack",
+                    "x": 444,
+                    "y": 772,
+                    "width": 95,
+                    "height": 82
+                },
+                {
+                    "name": "Sign",
+                    "x": 505,
+                    "y": 839,
+                    "width": 114,
+                    "height": 84
+                },
+                {
+                    "name": "Snowmobile",
+                    "x": 775,
+                    "y": 875,
+                    "width": 164,
+                    "height": 116
+                },
+                {
+                    "name": "Blueprint",
+                    "x": 172,
+                    "y": 907,
+                    "width": 72,
+                    "height": 135
+                },
+                {
+                    "name": "Skis",
+                    "x": 54,
+                    "y": 1039,
+                    "width": 108,
+                    "height": 148
+                },
+                {
+                    "name": "Rifle",
+                    "x": 339,
+                    "y": 917,
+                    "width": 86,
+                    "height": 192
+                },
+                {
+                    "name": "Handsaw",
+                    "x": 484,
+                    "y": 920,
+                    "width": 84,
+                    "height": 76
+                },
+                {
+                    "name": "Lamp",
+                    "x": 455,
+                    "y": 966,
+                    "width": 69,
+                    "height": 82
+                },
+                {
+                    "name": "Hook",
+                    "x": 541,
+                    "y": 1008,
+                    "width": 112,
+                    "height": 99
+                },
+                {
+                    "name": "Shovel",
+                    "x": 689,
+                    "y": 980,
+                    "width": 91,
+                    "height": 120
+                },
+                {
+                    "name": "Wheat",
+                    "x": 796,
+                    "y": 1029,
+                    "width": 110,
+                    "height": 139
+                },
+                {
+                    "name": "Barrel",
+                    "x": 680,
+                    "y": 1100,
+                    "width": 101,
+                    "height": 101
+                },
+                {
+                    "name": "Stool",
+                    "x": 486,
+                    "y": 1136,
+                    "width": 99,
+                    "height": 88
+                },
+                {
+                    "name": "Brush",
+                    "x": 427,
+                    "y": 1176,
+                    "width": 80,
+                    "height": 69
+                },
+                {
+                    "name": "Bear trap",
+                    "x": 345,
+                    "y": 1204,
+                    "width": 99,
+                    "height": 82
+                },
+                {
+                    "name": "Toolbox",
+                    "x": 236,
+                    "y": 1092,
+                    "width": 126,
+                    "height": 101
+                },
+                {
+                    "name": "Headwear",
+                    "x": 253,
+                    "y": 1197,
+                    "width": 110,
+                    "height": 80
+                },
+                {
+                    "name": "Gloves",
+                    "x": 99,
+                    "y": 1239,
+                    "width": 126,
+                    "height": 105
+                },
+                {
+                    "name": "Slingshot",
+                    "x": 158,
+                    "y": 1340,
+                    "width": 82,
+                    "height": 160
+                },
+                {
+                    "name": "Carrot",
+                    "x": 248,
+                    "y": 1284,
+                    "width": 103,
+                    "height": 90
+                },
+                {
+                    "name": "Apple",
+                    "x": 299,
+                    "y": 1378,
+                    "width": 100,
+                    "height": 82
+                },
+                {
+                    "name": "Horse",
+                    "x": 465,
+                    "y": 1368,
+                    "width": 148,
+                    "height": 126
+                },
+                {
+                    "name": "Shoes",
+                    "x": 554,
+                    "y": 1263,
                     "width": 114,
                     "height": 91
                 },
                 {
-                    "name": "Backpack",
-                    "x": 562,
-                    "y": 1183,
-                    "width": 149,
-                    "height": 177
+                    "name": "F",
+                    "x": 779,
+                    "y": 1218,
+                    "width": 105,
+                    "height": 93
                 },
                 {
-                    "name": "Camera",
-                    "x": 0,
-                    "y": 1232,
-                    "width": 133,
-                    "height": 126
+                    "name": "Waterbag",
+                    "x": 672,
+                    "y": 1368,
+                    "width": 128,
+                    "height": 109
+                }
+            ]
+        },
+        {
+            "name": "Mine",
+            "emoji": "⛏️",
+            "image": "images/mine.png",
+            "width": 945,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Spider",
+                    "x": 794,
+                    "y": 107,
+                    "width": 88,
+                    "height": 118
                 },
                 {
-                    "name": "Ball",
-                    "x": 730,
-                    "y": 1391,
-                    "width": 107,
-                    "height": 102
+                    "name": "Plane",
+                    "x": 560,
+                    "y": 86,
+                    "width": 111,
+                    "height": 97
                 },
                 {
-                    "name": "Banner",
-                    "x": 145,
-                    "y": 430,
-                    "width": 89,
-                    "height": 172
+                    "name": "A",
+                    "x": 322,
+                    "y": 54,
+                    "width": 70,
+                    "height": 69
                 },
                 {
-                    "name": "Hot air balloon",
-                    "x": 359,
-                    "y": 38,
-                    "width": 147,
-                    "height": 196
+                    "name": "Hanging banner",
+                    "x": 186,
+                    "y": 109,
+                    "width": 67,
+                    "height": 143
+                },
+                {
+                    "name": "Withered branch",
+                    "x": 17,
+                    "y": 202,
+                    "width": 99,
+                    "height": 91
+                },
+                {
+                    "name": "Music note",
+                    "x": 116,
+                    "y": 254,
+                    "width": 99,
+                    "height": 93
+                },
+                {
+                    "name": "Plant",
+                    "x": 114,
+                    "y": 362,
+                    "width": 70,
+                    "height": 84
+                },
+                {
+                    "name": "Ladder",
+                    "x": 299,
+                    "y": 282,
+                    "width": 70,
+                    "height": 145
+                },
+                {
+                    "name": "Megaphone",
+                    "x": 411,
+                    "y": 260,
+                    "width": 72,
+                    "height": 95
+                },
+                {
+                    "name": "Parcel",
+                    "x": 390,
+                    "y": 357,
+                    "width": 78,
+                    "height": 91
                 },
                 {
                     "name": "Chimney",
-                    "x": 527,
-                    "y": 198,
-                    "width": 86,
-                    "height": 109
+                    "x": 486,
+                    "y": 351,
+                    "width": 70,
+                    "height": 97
+                },
+                {
+                    "name": "Bird",
+                    "x": 590,
+                    "y": 315,
+                    "width": 107,
+                    "height": 70
                 },
                 {
                     "name": "Tower",
-                    "x": 305,
-                    "y": 243,
-                    "width": 89,
-                    "height": 121
+                    "x": 644,
+                    "y": 418,
+                    "width": 82,
+                    "height": 135
                 },
                 {
-                    "name": "Rope",
-                    "x": 415,
-                    "y": 859,
-                    "width": 131,
-                    "height": 121
+                    "name": "Bell",
+                    "x": 808,
+                    "y": 397,
+                    "width": 111,
+                    "height": 93
+                },
+                {
+                    "name": "Pipe",
+                    "x": 21,
+                    "y": 488,
+                    "width": 120,
+                    "height": 101
+                },
+                {
+                    "name": "Pouch",
+                    "x": 198,
+                    "y": 501,
+                    "width": 78,
+                    "height": 90
+                },
+                {
+                    "name": "Oxygen tank",
+                    "x": 263,
+                    "y": 627,
+                    "width": 88,
+                    "height": 82
+                },
+                {
+                    "name": "Bucket",
+                    "x": 366,
+                    "y": 547,
+                    "width": 80,
+                    "height": 63
+                },
+                {
+                    "name": "Arrow sign",
+                    "x": 373,
+                    "y": 484,
+                    "width": 118,
+                    "height": 70
+                },
+                {
+                    "name": "Icicle",
+                    "x": 476,
+                    "y": 473,
+                    "width": 74,
+                    "height": 90
+                },
+                {
+                    "name": "6",
+                    "x": 527,
+                    "y": 517,
+                    "width": 91,
+                    "height": 69
+                },
+                {
+                    "name": "Broom",
+                    "x": 497,
+                    "y": 585,
+                    "width": 99,
+                    "height": 80
+                },
+                {
+                    "name": "Caravan",
+                    "x": 636,
+                    "y": 595,
+                    "width": 90,
+                    "height": 84
+                },
+                {
+                    "name": "Spider web",
+                    "x": 739,
+                    "y": 589,
+                    "width": 114,
+                    "height": 97
+                },
+                {
+                    "name": "Lantern",
+                    "x": 848,
+                    "y": 576,
+                    "width": 72,
+                    "height": 90
+                },
+                {
+                    "name": "Notice board",
+                    "x": 51,
+                    "y": 753,
+                    "width": 88,
+                    "height": 135
+                },
+                {
+                    "name": "Mailbox",
+                    "x": 145,
+                    "y": 800,
+                    "width": 97,
+                    "height": 105
+                },
+                {
+                    "name": "Chest",
+                    "x": 242,
+                    "y": 770,
+                    "width": 101,
+                    "height": 74
+                },
+                {
+                    "name": "Shovel",
+                    "x": 411,
+                    "y": 738,
+                    "width": 122,
+                    "height": 107
+                },
+                {
+                    "name": "Flame",
+                    "x": 505,
+                    "y": 825,
+                    "width": 107,
+                    "height": 91
+                },
+                {
+                    "name": "Motorcycle",
+                    "x": 617,
+                    "y": 690,
+                    "width": 133,
+                    "height": 82
+                },
+                {
+                    "name": "Iron pot",
+                    "x": 615,
+                    "y": 770,
+                    "width": 80,
+                    "height": 82
+                },
+                {
+                    "name": "Pickaxe",
+                    "x": 726,
+                    "y": 789,
+                    "width": 107,
+                    "height": 91
+                },
+                {
+                    "name": "Safety helmet",
+                    "x": 823,
+                    "y": 800,
+                    "width": 105,
+                    "height": 84
+                },
+                {
+                    "name": "Wheel",
+                    "x": 42,
+                    "y": 885,
+                    "width": 106,
+                    "height": 91
+                },
+                {
+                    "name": "Snowman",
+                    "x": 276,
+                    "y": 848,
+                    "width": 110,
+                    "height": 128
+                },
+                {
+                    "name": "Barrels",
+                    "x": 38,
+                    "y": 1022,
+                    "width": 132,
+                    "height": 111
+                },
+                {
+                    "name": "Cart",
+                    "x": 146,
+                    "y": 959,
+                    "width": 163,
+                    "height": 110
+                },
+                {
+                    "name": "Ski",
+                    "x": 239,
+                    "y": 1068,
+                    "width": 134,
+                    "height": 110
+                },
+                {
+                    "name": "Key",
+                    "x": 417,
+                    "y": 1085,
+                    "width": 115,
+                    "height": 97
+                },
+                {
+                    "name": "Item 41",
+                    "x": 594,
+                    "y": 981,
+                    "width": 91,
+                    "height": 78
+                },
+                {
+                    "name": "Glass bottles",
+                    "x": 729,
+                    "y": 908,
+                    "width": 69,
+                    "height": 85
+                },
+                {
+                    "name": "Mushroom",
+                    "x": 33,
+                    "y": 1157,
+                    "width": 113,
+                    "height": 98
+                },
+                {
+                    "name": "Wrench",
+                    "x": 192,
+                    "y": 1224,
+                    "width": 132,
+                    "height": 76
+                },
+                {
+                    "name": "Crystal",
+                    "x": 308,
+                    "y": 1230,
+                    "width": 123,
+                    "height": 135
+                },
+                {
+                    "name": "Foot print",
+                    "x": 40,
+                    "y": 1300,
+                    "width": 89,
+                    "height": 80
+                },
+                {
+                    "name": "Pliers",
+                    "x": 42,
+                    "y": 1371,
+                    "width": 160,
+                    "height": 109
+                },
+                {
+                    "name": "Hammer",
+                    "x": 740,
+                    "y": 1106,
+                    "width": 104,
+                    "height": 134
+                },
+                {
+                    "name": "Canned food",
+                    "x": 740,
+                    "y": 1232,
+                    "width": 111,
+                    "height": 85
+                },
+                {
+                    "name": "Chain",
+                    "x": 647,
+                    "y": 1295,
+                    "width": 262,
+                    "height": 173
+                }
+            ]
+        },
+        {
+            "name": "Town",
+            "emoji": "🏘️",
+            "image": "images/town.png",
+            "width": 945,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Bird nest",
+                    "x": 79,
+                    "y": 96,
+                    "width": 74,
+                    "height": 74
                 },
                 {
                     "name": "Skylight",
-                    "x": 515,
-                    "y": 321,
+                    "x": 27,
+                    "y": 189,
+                    "width": 149,
+                    "height": 95
+                },
+                {
+                    "name": "Chimney",
+                    "x": 205,
+                    "y": 143,
+                    "width": 112,
+                    "height": 86
+                },
+                {
+                    "name": "Pigeon",
+                    "x": 174,
+                    "y": 256,
+                    "width": 99,
+                    "height": 112
+                },
+                {
+                    "name": "Tree",
+                    "x": 376,
+                    "y": 214,
+                    "width": 109,
+                    "height": 147
+                },
+                {
+                    "name": "Heart",
+                    "x": 353,
+                    "y": 100,
+                    "width": 93,
+                    "height": 74
+                },
+                {
+                    "name": "Airship",
+                    "x": 506,
+                    "y": 67,
+                    "width": 112,
+                    "height": 109
+                },
+                {
+                    "name": "Knife and fork",
+                    "x": 736,
+                    "y": 58,
+                    "width": 101,
+                    "height": 99
+                },
+                {
+                    "name": "Rug",
+                    "x": 687,
+                    "y": 214,
+                    "width": 76,
+                    "height": 69
+                },
+                {
+                    "name": "Arrow sign",
+                    "x": 799,
+                    "y": 242,
+                    "width": 90,
+                    "height": 70
+                },
+                {
+                    "name": "H",
+                    "x": 725,
+                    "y": 313,
+                    "width": 109,
+                    "height": 69
+                },
+                {
+                    "name": "Megaphone",
+                    "x": 22,
+                    "y": 439,
+                    "width": 107,
+                    "height": 101
+                },
+                {
+                    "name": "Flower basket",
+                    "x": 153,
+                    "y": 404,
+                    "width": 170,
+                    "height": 137
+                },
+                {
+                    "name": "Target",
+                    "x": 559,
+                    "y": 408,
+                    "width": 103,
+                    "height": 93
+                },
+                {
+                    "name": "Lamp",
+                    "x": 626,
+                    "y": 528,
+                    "width": 97,
+                    "height": 82
+                },
+                {
+                    "name": "Balloon",
+                    "x": 732,
+                    "y": 425,
+                    "width": 82,
+                    "height": 137
+                },
+                {
+                    "name": "Flag garland",
+                    "x": 776,
+                    "y": 545,
+                    "width": 93,
+                    "height": 120
+                },
+                {
+                    "name": "Yak",
+                    "x": 826,
+                    "y": 644,
+                    "width": 101,
+                    "height": 181
+                },
+                {
+                    "name": "Fence",
+                    "x": 681,
+                    "y": 711,
+                    "width": 126,
+                    "height": 97
+                },
+                {
+                    "name": "Pumpkin",
+                    "x": 639,
+                    "y": 797,
+                    "width": 78,
+                    "height": 67
+                },
+                {
+                    "name": "Spiked Flail",
+                    "x": 519,
+                    "y": 835,
+                    "width": 141,
+                    "height": 82
+                },
+                {
+                    "name": "Crossbow",
+                    "x": 490,
+                    "y": 745,
+                    "width": 116,
+                    "height": 74
+                },
+                {
+                    "name": "Chestplate",
+                    "x": 483,
+                    "y": 646,
+                    "width": 93,
+                    "height": 82
+                },
+                {
+                    "name": "Sword",
+                    "x": 403,
+                    "y": 562,
+                    "width": 69,
+                    "height": 101
+                },
+                {
+                    "name": "Turkey",
+                    "x": 387,
+                    "y": 663,
+                    "width": 95,
+                    "height": 82
+                },
+                {
+                    "name": "Spear",
+                    "x": 300,
+                    "y": 597,
+                    "width": 70,
+                    "height": 209
+                },
+                {
+                    "name": "Shield",
+                    "x": 370,
+                    "y": 759,
+                    "width": 105,
+                    "height": 116
+                },
+                {
+                    "name": "Should bag",
+                    "x": 94,
+                    "y": 595,
+                    "width": 120,
+                    "height": 110
+                },
+                {
+                    "name": "Cape",
+                    "x": 31,
+                    "y": 671,
+                    "width": 109,
+                    "height": 109
+                },
+                {
+                    "name": "Patch",
+                    "x": 109,
+                    "y": 753,
+                    "width": 82,
+                    "height": 80
+                },
+                {
+                    "name": "Gloves",
+                    "x": 235,
+                    "y": 764,
+                    "width": 86,
+                    "height": 86
+                },
+                {
+                    "name": "Shovel",
+                    "x": 266,
+                    "y": 831,
+                    "width": 97,
+                    "height": 126
+                },
+                {
+                    "name": "Headwear",
+                    "x": 45,
+                    "y": 833,
+                    "width": 101,
+                    "height": 101
+                },
+                {
+                    "name": "Iron axe",
+                    "x": 45,
+                    "y": 940,
+                    "width": 101,
+                    "height": 122
+                },
+                {
+                    "name": "Shoe",
+                    "x": 145,
+                    "y": 922,
+                    "width": 91,
+                    "height": 78
+                },
+                {
+                    "name": "Pile of leaves",
+                    "x": 184,
+                    "y": 1010,
+                    "width": 170,
+                    "height": 82
+                },
+                {
+                    "name": "Brush",
+                    "x": 182,
+                    "y": 1086,
+                    "width": 116,
+                    "height": 82
+                },
+                {
+                    "name": "Pliers",
+                    "x": 16,
+                    "y": 1162,
+                    "width": 160,
+                    "height": 93
+                },
+                {
+                    "name": "Mushroom",
+                    "x": 123,
+                    "y": 1254,
+                    "width": 135,
+                    "height": 145
+                },
+                {
+                    "name": "Glass bottle",
+                    "x": 353,
+                    "y": 1162,
+                    "width": 154,
+                    "height": 97
+                },
+                {
+                    "name": "Corn",
+                    "x": 481,
+                    "y": 1235,
+                    "width": 107,
+                    "height": 82
+                },
+                {
+                    "name": "Fish",
+                    "x": 614,
+                    "y": 1305,
+                    "width": 192,
+                    "height": 109
+                },
+                {
+                    "name": "Spatula",
+                    "x": 774,
+                    "y": 1233,
+                    "width": 122,
+                    "height": 97
+                },
+                {
+                    "name": "Earmuff",
+                    "x": 685,
+                    "y": 1128,
+                    "width": 141,
+                    "height": 124
+                },
+                {
+                    "name": "Pot",
+                    "x": 458,
+                    "y": 1033,
+                    "width": 120,
+                    "height": 105
+                },
+                {
+                    "name": "Potato",
+                    "x": 605,
+                    "y": 1042,
+                    "width": 126,
+                    "height": 93
+                },
+                {
+                    "name": "Broom",
+                    "x": 405,
+                    "y": 867,
+                    "width": 114,
+                    "height": 109
+                },
+                {
+                    "name": "Egg",
+                    "x": 641,
+                    "y": 945,
+                    "width": 122,
+                    "height": 82
+                },
+                {
+                    "name": "Beast trap",
+                    "x": 698,
+                    "y": 842,
+                    "width": 107,
+                    "height": 90
+                },
+                {
+                    "name": "Apple",
+                    "x": 789,
+                    "y": 882,
+                    "width": 154,
+                    "height": 105
+                }
+            ]
+        },
+        {
+            "name": "Hospital",
+            "emoji": "🏥",
+            "image": "images/hospital.png",
+            "width": 949,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "5",
+                    "x": 79,
+                    "y": 126,
+                    "width": 122,
+                    "height": 124
+                },
+                {
+                    "name": "Syringe",
+                    "x": 410,
+                    "y": 168,
+                    "width": 97,
+                    "height": 91
+                },
+                {
+                    "name": "Skylight",
+                    "x": 628,
+                    "y": 52,
+                    "width": 122,
+                    "height": 114
+                },
+                {
+                    "name": "Pipe",
+                    "x": 845,
+                    "y": 164,
+                    "width": 95,
+                    "height": 265
+                },
+                {
+                    "name": "Bird",
+                    "x": 738,
+                    "y": 294,
+                    "width": 90,
+                    "height": 112
+                },
+                {
+                    "name": "Microscope",
+                    "x": 669,
+                    "y": 261,
+                    "width": 94,
+                    "height": 136
+                },
+                {
+                    "name": "Lamp",
+                    "x": 595,
+                    "y": 319,
+                    "width": 124,
+                    "height": 95
+                },
+                {
+                    "name": "Banner",
+                    "x": 547,
+                    "y": 275,
+                    "width": 86,
+                    "height": 194
+                },
+                {
+                    "name": "Clock",
+                    "x": 267,
+                    "y": 277,
+                    "width": 126,
+                    "height": 103
+                },
+                {
+                    "name": "Moon",
+                    "x": 56,
+                    "y": 429,
+                    "width": 97,
+                    "height": 86
+                },
+                {
+                    "name": "Obelisk",
+                    "x": 288,
+                    "y": 484,
+                    "width": 84,
+                    "height": 187
+                },
+                {
+                    "name": "Bouquet",
+                    "x": 103,
+                    "y": 608,
+                    "width": 99,
+                    "height": 124
+                },
+                {
+                    "name": "IV drop",
+                    "x": 359,
+                    "y": 597,
+                    "width": 93,
+                    "height": 120
+                },
+                {
+                    "name": "Tree",
+                    "x": 479,
+                    "y": 471,
+                    "width": 76,
+                    "height": 187
+                },
+                {
+                    "name": "Thermometer",
+                    "x": 546,
+                    "y": 498,
+                    "width": 76,
+                    "height": 122
+                },
+                {
+                    "name": "Towel",
+                    "x": 709,
+                    "y": 511,
+                    "width": 78,
+                    "height": 128
+                },
+                {
+                    "name": "Coat rack",
+                    "x": 816,
+                    "y": 551,
+                    "width": 103,
+                    "height": 223
+                },
+                {
+                    "name": "Test tube",
+                    "x": 658,
+                    "y": 667,
+                    "width": 101,
+                    "height": 72
+                },
+                {
+                    "name": "Scale",
+                    "x": 568,
+                    "y": 663,
+                    "width": 93,
+                    "height": 76
+                },
+                {
+                    "name": "Mirror",
+                    "x": 500,
+                    "y": 734,
+                    "width": 111,
+                    "height": 97
+                },
+                {
+                    "name": "Kettle",
+                    "x": 279,
+                    "y": 694,
+                    "width": 103,
+                    "height": 74
+                },
+                {
+                    "name": "Bag",
+                    "x": 20,
+                    "y": 761,
+                    "width": 101,
+                    "height": 80
+                },
+                {
+                    "name": "Giftbox",
+                    "x": 124,
+                    "y": 812,
+                    "width": 114,
+                    "height": 93
+                },
+                {
+                    "name": "Patch",
+                    "x": 244,
+                    "y": 759,
+                    "width": 84,
+                    "height": 70
+                },
+                {
+                    "name": "Stethoscope",
+                    "x": 100,
+                    "y": 926,
+                    "width": 93,
+                    "height": 110
+                },
+                {
+                    "name": "Fake limb",
+                    "x": 246,
+                    "y": 848,
+                    "width": 95,
+                    "height": 82
+                },
+                {
+                    "name": "Casefile",
+                    "x": 302,
+                    "y": 919,
+                    "width": 114,
+                    "height": 105
+                },
+                {
+                    "name": "Bandage",
+                    "x": 393,
+                    "y": 808,
+                    "width": 103,
+                    "height": 69
+                },
+                {
+                    "name": "Apple",
+                    "x": 523,
+                    "y": 820,
+                    "width": 76,
+                    "height": 70
+                },
+                {
+                    "name": "Newspaper",
+                    "x": 588,
+                    "y": 839,
+                    "width": 84,
+                    "height": 80
+                },
+                {
+                    "name": "Bell",
+                    "x": 786,
+                    "y": 783,
+                    "width": 72,
+                    "height": 99
+                },
+                {
+                    "name": "Book",
+                    "x": 799,
+                    "y": 922,
+                    "width": 105,
+                    "height": 84
+                },
+                {
+                    "name": "Slippers",
+                    "x": 702,
+                    "y": 997,
+                    "width": 109,
+                    "height": 74
+                },
+                {
+                    "name": "W",
+                    "x": 416,
+                    "y": 892,
+                    "width": 109,
+                    "height": 82
+                },
+                {
+                    "name": "Trash can",
+                    "x": 452,
+                    "y": 974,
+                    "width": 90,
+                    "height": 112
+                },
+                {
+                    "name": "Crutch",
+                    "x": 27,
+                    "y": 941,
+                    "width": 99,
+                    "height": 291
+                },
+                {
+                    "name": "First aid kit",
+                    "x": 159,
+                    "y": 1088,
+                    "width": 118,
+                    "height": 118
+                },
+                {
+                    "name": "Water stain",
+                    "x": 309,
+                    "y": 1109,
+                    "width": 133,
+                    "height": 101
+                },
+                {
+                    "name": "Paper bag",
+                    "x": 67,
+                    "y": 1202,
+                    "width": 126,
+                    "height": 137
+                },
+                {
+                    "name": "Dentures",
+                    "x": 204,
+                    "y": 1229,
+                    "width": 137,
+                    "height": 122
+                },
+                {
+                    "name": "Scalpel",
+                    "x": 365,
+                    "y": 1282,
+                    "width": 130,
+                    "height": 78
+                },
+                {
+                    "name": "Pliers",
+                    "x": 450,
+                    "y": 1180,
+                    "width": 143,
+                    "height": 91
+                },
+                {
+                    "name": "Paper ball",
+                    "x": 513,
+                    "y": 1075,
+                    "width": 103,
+                    "height": 91
+                },
+                {
+                    "name": "Scissors",
+                    "x": 502,
+                    "y": 1254,
+                    "width": 122,
+                    "height": 103
+                },
+                {
+                    "name": "Tweezers",
+                    "x": 557,
+                    "y": 1322,
+                    "width": 126,
+                    "height": 86
+                },
+                {
+                    "name": "Button",
+                    "x": 669,
+                    "y": 1378,
+                    "width": 107,
+                    "height": 88
+                },
+                {
+                    "name": "Comb",
+                    "x": 666,
+                    "y": 1248,
+                    "width": 131,
+                    "height": 109
+                },
+                {
+                    "name": "Three leaf clover",
+                    "x": 666,
+                    "y": 1063,
+                    "width": 97,
+                    "height": 65
+                },
+                {
+                    "name": "Mortar pastle",
+                    "x": 780,
+                    "y": 1088,
+                    "width": 128,
+                    "height": 137
+                },
+                {
+                    "name": "Capsule",
+                    "x": 667,
+                    "y": 395,
+                    "width": 105,
+                    "height": 57
+                }
+            ]
+        },
+        {
+            "name": "Hanger",
+            "emoji": "✈️",
+            "image": "images/hanger.png",
+            "width": 943,
+            "height": 1600,
+            "items": [
+                {
+                    "name": "Oxygen tank",
+                    "x": 569,
+                    "y": 242,
+                    "width": 95,
+                    "height": 120
+                },
+                {
+                    "name": "Fuel canister",
+                    "x": 278,
+                    "y": 835,
+                    "width": 93,
+                    "height": 126
+                },
+                {
+                    "name": "Medkit",
+                    "x": 167,
+                    "y": 585,
+                    "width": 95,
+                    "height": 74
+                },
+                {
+                    "name": "Screwdriver",
+                    "x": 239,
+                    "y": 966,
+                    "width": 82,
+                    "height": 109
+                },
+                {
+                    "name": "Mop",
+                    "x": 302,
+                    "y": 1022,
+                    "width": 194,
+                    "height": 72
+                },
+                {
+                    "name": "Triangle",
+                    "x": 182,
+                    "y": 1353,
+                    "width": 150,
+                    "height": 105
+                },
+                {
+                    "name": "Air pump",
+                    "x": 832,
+                    "y": 879,
                     "width": 110,
-                    "height": 119
+                    "height": 204
+                },
+                {
+                    "name": "Paper bag",
+                    "x": 588,
+                    "y": 911,
+                    "width": 88,
+                    "height": 114
+                },
+                {
+                    "name": "Lighthouse",
+                    "x": 712,
+                    "y": 580,
+                    "width": 67,
+                    "height": 162
+                },
+                {
+                    "name": "Key",
+                    "x": 121,
+                    "y": 1269,
+                    "width": 110,
+                    "height": 70
+                },
+                {
+                    "name": "Goggles",
+                    "x": 704,
+                    "y": 922,
+                    "width": 103,
+                    "height": 57
+                },
+                {
+                    "name": "Hook",
+                    "x": 794,
+                    "y": 825,
+                    "width": 65,
+                    "height": 116
+                },
+                {
+                    "name": "Lock",
+                    "x": 276,
+                    "y": 1098,
+                    "width": 74,
+                    "height": 91
+                },
+                {
+                    "name": "Kettle",
+                    "x": 102,
+                    "y": 682,
+                    "width": 84,
+                    "height": 80
+                },
+                {
+                    "name": "Magnet",
+                    "x": 539,
+                    "y": 1134,
+                    "width": 112,
+                    "height": 91
+                },
+                {
+                    "name": "Spring",
+                    "x": 699,
+                    "y": 1166,
+                    "width": 112,
+                    "height": 70
+                },
+                {
+                    "name": "Seagull",
+                    "x": 796,
+                    "y": 692,
+                    "width": 103,
+                    "height": 88
+                },
+                {
+                    "name": "Hammer",
+                    "x": 592,
+                    "y": 1292,
+                    "width": 95,
+                    "height": 164
+                },
+                {
+                    "name": "Glass bottle",
+                    "x": 582,
+                    "y": 73,
+                    "width": 84,
+                    "height": 101
+                },
+                {
+                    "name": "Pipe",
+                    "x": 718,
+                    "y": 16,
+                    "width": 78,
+                    "height": 152
+                },
+                {
+                    "name": "Barrel",
+                    "x": 133,
+                    "y": 785,
+                    "width": 105,
+                    "height": 116
+                },
+                {
+                    "name": "Cup",
+                    "x": 668,
+                    "y": 1063,
+                    "width": 118,
+                    "height": 109
+                },
+                {
+                    "name": "Paint bucket",
+                    "x": 672,
+                    "y": 839,
+                    "width": 91,
+                    "height": 103
+                },
+                {
+                    "name": "Arrow sign",
+                    "x": 619,
+                    "y": 399,
+                    "width": 160,
+                    "height": 120
+                },
+                {
+                    "name": "Blueprint",
+                    "x": 278,
+                    "y": 936,
+                    "width": 156,
+                    "height": 97
+                },
+                {
+                    "name": "Searchlight",
+                    "x": 491,
+                    "y": 551,
+                    "width": 128,
+                    "height": 84
+                },
+                {
+                    "name": "Cart",
+                    "x": 13,
+                    "y": 800,
+                    "width": 109,
+                    "height": 126
+                },
+                {
+                    "name": "Scissors",
+                    "x": 750,
+                    "y": 1288,
+                    "width": 137,
+                    "height": 126
+                },
+                {
+                    "name": "Fire alarm",
+                    "x": 304,
+                    "y": 441,
+                    "width": 107,
+                    "height": 97
+                },
+                {
+                    "name": "Projector",
+                    "x": 100,
+                    "y": 185,
+                    "width": 112,
+                    "height": 154
+                },
+                {
+                    "name": "Chain",
+                    "x": 230,
+                    "y": 52,
+                    "width": 69,
+                    "height": 267
+                },
+                {
+                    "name": "Road cone",
+                    "x": 24,
+                    "y": 1305,
+                    "width": 131,
+                    "height": 187
+                },
+                {
+                    "name": "Gear",
+                    "x": 384,
+                    "y": 639,
+                    "width": 133,
+                    "height": 107
+                },
+                {
+                    "name": "Vent",
+                    "x": 159,
+                    "y": 448,
+                    "width": 99,
+                    "height": 107
+                },
+                {
+                    "name": "Backpack",
+                    "x": 53,
+                    "y": 446,
+                    "width": 107,
+                    "height": 116
+                },
+                {
+                    "name": "Wrench",
+                    "x": 436,
+                    "y": 1364,
+                    "width": 131,
+                    "height": 120
+                },
+                {
+                    "name": "Brush",
+                    "x": 600,
+                    "y": 686,
+                    "width": 82,
+                    "height": 103
+                },
+                {
+                    "name": "Medal",
+                    "x": 401,
+                    "y": 479,
+                    "width": 93,
+                    "height": 76
+                },
+                {
+                    "name": "Plant",
+                    "x": 790,
+                    "y": 42,
+                    "width": 90,
+                    "height": 80
+                },
+                {
+                    "name": "Moon",
+                    "x": 432,
+                    "y": 63,
+                    "width": 80,
+                    "height": 76
+                },
+                {
+                    "name": "Tape",
+                    "x": 445,
+                    "y": 1079,
+                    "width": 112,
+                    "height": 97
+                },
+                {
+                    "name": "Tree",
+                    "x": 464,
+                    "y": 1214,
+                    "width": 97,
+                    "height": 99
+                },
+                {
+                    "name": "Ladder",
+                    "x": 293,
+                    "y": 84,
+                    "width": 95,
+                    "height": 160
+                },
+                {
+                    "name": "Paw mark",
+                    "x": 306,
+                    "y": 1258,
+                    "width": 107,
+                    "height": 88
+                },
+                {
+                    "name": "Mouse",
+                    "x": 449,
+                    "y": 300,
+                    "width": 118,
+                    "height": 80
+                },
+                {
+                    "name": "Scarf",
+                    "x": 739,
+                    "y": 237,
+                    "width": 131,
+                    "height": 90
+                },
+                {
+                    "name": "Z",
+                    "x": 180,
+                    "y": 671,
+                    "width": 99,
+                    "height": 91
+                },
+                {
+                    "name": "Clock",
+                    "x": 142,
+                    "y": 65,
+                    "width": 82,
+                    "height": 124
+                },
+                {
+                    "name": "Blackboard",
+                    "x": 321,
+                    "y": 572,
+                    "width": 160,
+                    "height": 114
+                },
+                {
+                    "name": "Oil stain",
+                    "x": 460,
+                    "y": 1014,
+                    "width": 229,
+                    "height": 70
                 }
             ]
         }

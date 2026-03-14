@@ -67,7 +67,10 @@
     const card = document.createElement("div");
     card.className = "level-card" + (isCustom ? " custom" : "");
     card.innerHTML = `
-      <div class="level-card-placeholder">${level.emoji || "🖼️"}</div>
+      <div class="level-card-placeholder">
+        <span class="level-card-emoji">${level.emoji || "🖼️"}</span>
+        <img class="level-card-preview" src="${level.image || ""}" alt="" aria-hidden="true">
+      </div>
       <div class="level-card-body">
         <div class="level-card-name">${level.name}</div>
         <div class="level-card-info">${level.items.length} hidden items</div>
