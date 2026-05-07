@@ -2067,341 +2067,356 @@
                 }
             ]
         },
+
         {
-            "name": "Training Grounds",
-            "emoji": "🤼",
+            "name": "Castle Gate",
+            "emoji": "🧱",
             "image": "images/training-grounds.webp",
-            "width": 850,
-            "height": 1343,
+            "width": 1080,
+            "height": 1730,
             "items": [
                 {
-                    "name": "Beehive",
-                    "x": 140,
-                    "y": 142,
-                    "width": 75,
-                    "height": 74
-                },
-                {
-                    "name": "Anemometer",
-                    "x": 327,
-                    "y": 93,
-                    "width": 81,
-                    "height": 76
-                },
-                {
-                    "name": "Airship",
-                    "x": 464,
-                    "y": 79,
-                    "width": 114,
-                    "height": 78
-                },
-                {
-                    "name": "Chimney",
-                    "x": 507,
-                    "y": 179,
-                    "width": 57,
-                    "height": 83
-                },
-                {
-                    "name": "Parachute",
-                    "x": 631,
-                    "y": 181,
-                    "width": 77,
-                    "height": 96
-                },
-                {
-                    "name": "Watchtower",
-                    "x": 124,
-                    "y": 256,
-                    "width": 49,
-                    "height": 93
-                },
-                {
-                    "name": "Loudspeaker",
-                    "x": 164,
-                    "y": 289,
-                    "width": 66,
-                    "height": 72
-                },
-                {
-                    "name": "Ventilator",
-                    "x": 359,
-                    "y": 314,
-                    "width": 89,
-                    "height": 84
-                },
-                {
-                    "name": "Arrow",
-                    "x": 496,
-                    "y": 312,
-                    "width": 58,
-                    "height": 24
-                },
-                {
-                    "name": "Rocket",
-                    "x": 669,
-                    "y": 291,
-                    "width": 53,
-                    "height": 118
-                },
-                {
-                    "name": "Watchtower",
-                    "x": 731,
-                    "y": 385,
-                    "width": 52,
-                    "height": 108
-                },
-                {
-                    "name": "Ladder",
-                    "x": 579,
-                    "y": 422,
-                    "width": 56,
-                    "height": 115
-                },
-                {
-                    "name": "Decorative flag",
-                    "x": 475,
-                    "y": 478,
-                    "width": 105,
-                    "height": 49
-                },
-                {
-                    "name": "Valve",
-                    "x": 650,
-                    "y": 501,
-                    "width": 65,
-                    "height": 55
-                },
-                {
-                    "name": "Notice board",
-                    "x": 694,
-                    "y": 545,
-                    "width": 76,
-                    "height": 70
-                },
-                {
-                    "name": "Parcel",
-                    "x": 134,
-                    "y": 485,
-                    "width": 105,
-                    "height": 92
-                },
-                {
-                    "name": "Bike",
-                    "x": 321,
-                    "y": 492,
-                    "width": 80,
-                    "height": 55
-                },
-                {
-                    "name": "Whip",
-                    "x": 66,
-                    "y": 546,
-                    "width": 67,
-                    "height": 125
-                },
-                {
-                    "name": "Sun",
-                    "x": 410,
-                    "y": 562,
-                    "width": 66,
-                    "height": 65
-                },
-                {
-                    "name": "Leaf",
-                    "x": 516,
-                    "y": 622,
-                    "width": 61,
-                    "height": 46
-                },
-                {
-                    "name": "Tattered cloth",
-                    "x": 661,
-                    "y": 601,
-                    "width": 98,
-                    "height": 90
-                },
-                {
-                    "name": "Iron sword",
-                    "x": 578,
-                    "y": 688,
-                    "width": 43,
-                    "height": 108
-                },
-                {
-                    "name": "First-aid kit",
-                    "x": 75,
-                    "y": 767,
-                    "width": 105,
-                    "height": 65
-                },
-                {
-                    "name": "Torch",
-                    "x": 438,
-                    "y": 708,
-                    "width": 49,
-                    "height": 56
-                },
-                {
-                    "name": "Poster",
-                    "x": 484,
-                    "y": 692,
-                    "width": 72,
-                    "height": 108
-                },
-                {
-                    "name": "Wooden training dummy",
-                    "x": 260,
-                    "y": 718,
-                    "width": 87,
-                    "height": 181
-                },
-                {
-                    "name": "Bench",
-                    "x": 438,
-                    "y": 793,
-                    "width": 74,
-                    "height": 61
-                },
-                {
-                    "name": "Axe",
-                    "x": 627,
-                    "y": 745,
-                    "width": 59,
-                    "height": 119
-                },
-                {
-                    "name": "Towel",
-                    "x": 187,
-                    "y": 809,
-                    "width": 85,
-                    "height": 73
-                },
-                {
-                    "name": "Mop",
-                    "x": 407,
-                    "y": 814,
-                    "width": 75,
-                    "height": 84
-                },
-                {
-                    "name": "Chalkboard",
-                    "x": 506,
-                    "y": 865,
-                    "width": 44,
-                    "height": 24
-                },
-                {
-                    "name": "Skis",
-                    "x": 677,
-                    "y": 877,
-                    "width": 150,
-                    "height": 34
-                },
-                {
-                    "name": "Water container",
-                    "x": 235,
-                    "y": 917,
-                    "width": 97,
-                    "height": 72
-                },
-                {
-                    "name": "Dumbbell",
-                    "x": 349,
-                    "y": 912,
-                    "width": 73,
-                    "height": 61
-                },
-                {
-                    "name": "Shovel",
-                    "x": 87,
-                    "y": 921,
-                    "width": 172,
-                    "height": 101
-                },
-                {
-                    "name": "Bucket",
-                    "x": 90,
-                    "y": 977,
-                    "width": 81,
-                    "height": 109
-                },
-                {
-                    "name": "Mug",
-                    "x": 649,
-                    "y": 924,
-                    "width": 76,
-                    "height": 69
-                },
-                {
-                    "name": "Helmet",
-                    "x": 465,
-                    "y": 962,
-                    "width": 62,
-                    "height": 70
-                },
-                {
-                    "name": "Whistle",
-                    "x": 566,
-                    "y": 979,
-                    "width": 93,
-                    "height": 111
-                },
-                {
-                    "name": "Goggles",
-                    "x": 701,
-                    "y": 948,
-                    "width": 93,
-                    "height": 69
-                },
-                {
-                    "name": "Pliers",
-                    "x": 190,
-                    "y": 1061,
-                    "width": 91,
-                    "height": 62
-                },
-                {
                     "name": "Horn",
-                    "x": 299,
-                    "y": 1046,
-                    "width": 89,
-                    "height": 61
-                },
-                {
-                    "name": "Dagger",
-                    "x": 296,
-                    "y": 1137,
-                    "width": 92,
-                    "height": 93
-                },
-                {
-                    "name": "Skate",
-                    "x": 478,
-                    "y": 1146,
-                    "width": 124,
-                    "height": 95
+                    "x": 371,
+                    "y": 1302,
+                    "width": 179,
+                    "height": 140
                 },
                 {
                     "name": "Hammer",
-                    "x": 641,
-                    "y": 1120,
-                    "width": 90,
+                    "x": 724,
+                    "y": 1499,
+                    "width": 120,
+                    "height": 120
+                },
+                {
+                    "name": "Canteen",
+                    "x": 302,
+                    "y": 1185,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Goggles",
+                    "x": 902,
+                    "y": 1213,
+                    "width": 129,
+                    "height": 115
+                },
+                {
+                    "name": "Shovel",
+                    "x": 126,
+                    "y": 1186,
+                    "width": 188,
+                    "height": 133
+                },
+                {
+                    "name": "Pliers",
+                    "x": 180,
+                    "y": 1344,
+                    "width": 128,
+                    "height": 121
+                },
+                {
+                    "name": "Dumbbell",
+                    "x": 392,
+                    "y": 1148,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Dagger",
+                    "x": 315,
+                    "y": 1440,
+                    "width": 104,
+                    "height": 125
+                },
+                {
+                    "name": "Rag",
+                    "x": 845,
+                    "y": 794,
+                    "width": 100,
+                    "height": 80
+                },
+                {
+                    "name": "Towel",
+                    "x": 199,
+                    "y": 1028,
+                    "width": 96,
+                    "height": 152
+                },
+                {
+                    "name": "Coat",
+                    "x": 888,
+                    "y": 960,
+                    "width": 85,
+                    "height": 155
+                },
+                {
+                    "name": "Cup",
+                    "x": 777,
+                    "y": 1172,
+                    "width": 111,
                     "height": 99
                 },
                 {
-                    "name": "Spanner",
-                    "x": 133,
-                    "y": 1180,
-                    "width": 108,
-                    "height": 97
+                    "name": "Helmet",
+                    "x": 525,
+                    "y": 1209,
+                    "width": 135,
+                    "height": 126
+                },
+                {
+                    "name": "Medkit",
+                    "x": 66,
+                    "y": 975,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Whistle",
+                    "x": 688,
+                    "y": 1232,
+                    "width": 101,
+                    "height": 95
+                },
+                {
+                    "name": "Bucket",
+                    "x": 56,
+                    "y": 1280,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Wrench",
+                    "x": 117,
+                    "y": 1531,
+                    "width": 130,
+                    "height": 104
+                },
+                {
+                    "name": "Mop",
+                    "x": 526,
+                    "y": 1044,
+                    "width": 80,
+                    "height": 100
+                },
+                {
+                    "name": "Whip",
+                    "x": 80,
+                    "y": 689,
+                    "width": 90,
+                    "height": 175
+                },
+                {
+                    "name": "Blackboard",
+                    "x": 598,
+                    "y": 1093,
+                    "width": 139,
+                    "height": 128
+                },
+                {
+                    "name": "Beehive",
+                    "x": 177,
+                    "y": 187,
+                    "width": 89,
+                    "height": 102
+                },
+                {
+                    "name": "Training dummy",
+                    "x": 339,
+                    "y": 926,
+                    "width": 99,
+                    "height": 221
+                },
+                {
+                    "name": "Anemometer",
+                    "x": 397,
+                    "y": 164,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Patch",
+                    "x": 262,
+                    "y": 238,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Chimney",
+                    "x": 496,
+                    "y": 192,
+                    "width": 102,
+                    "height": 131
+                },
+                {
+                    "name": "Airship",
+                    "x": 595,
+                    "y": 134,
+                    "width": 155,
+                    "height": 113
+                },
+                {
+                    "name": "Torch",
+                    "x": 525,
+                    "y": 938,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Watchtower",
+                    "x": 897,
+                    "y": 490,
+                    "width": 120,
+                    "height": 100
+                },
+                {
+                    "name": "Ice skates",
+                    "x": 540,
+                    "y": 1389,
+                    "width": 159,
+                    "height": 185
+                },
+                {
+                    "name": "Sign post",
+                    "x": 895,
+                    "y": 688,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Iron axe",
+                    "x": 793,
+                    "y": 952,
+                    "width": 83,
+                    "height": 149
+                },
+                {
+                    "name": "Sword",
+                    "x": 726,
+                    "y": 902,
+                    "width": 80,
+                    "height": 100
+                },
+                {
+                    "name": "Flag garland",
+                    "x": 597,
+                    "y": 594,
+                    "width": 135,
+                    "height": 80
+                },
+                {
+                    "name": "Valve",
+                    "x": 828,
+                    "y": 636,
+                    "width": 80,
+                    "height": 80
                 },
                 {
                     "name": "4",
-                    "x": 149,
-                    "y": 635,
-                    "width": 78,
+                    "x": 177,
+                    "y": 842,
+                    "width": 117,
                     "height": 130
+                },
+                {
+                    "name": "Poster",
+                    "x": 603,
+                    "y": 906,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Bell",
+                    "x": 343,
+                    "y": 720,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Motorcycle",
+                    "x": 414,
+                    "y": 616,
+                    "width": 172,
+                    "height": 97
+                },
+                {
+                    "name": "Sun",
+                    "x": 528,
+                    "y": 747,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Parcel",
+                    "x": 180,
+                    "y": 632,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Pigeon",
+                    "x": 286,
+                    "y": 470,
+                    "width": 100,
+                    "height": 80
+                },
+                {
+                    "name": "Megaphone",
+                    "x": 147,
+                    "y": 421,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Skies",
+                    "x": 857,
+                    "y": 1101,
+                    "width": 206,
+                    "height": 79
+                },
+                {
+                    "name": "Bench",
+                    "x": 452,
+                    "y": 1017,
+                    "width": 66,
+                    "height": 66
+                },
+                {
+                    "name": "Exhaust fan",
+                    "x": 463,
+                    "y": 405,
+                    "width": 94,
+                    "height": 85
+                },
+                {
+                    "name": "Leaf",
+                    "x": 653,
+                    "y": 768,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Air drop",
+                    "x": 770,
+                    "y": 213,
+                    "width": 103,
+                    "height": 125
+                },
+                {
+                    "name": "Ladder",
+                    "x": 760,
+                    "y": 524,
+                    "width": 74,
+                    "height": 211
+                },
+                {
+                    "name": "Rocket",
+                    "x": 832,
+                    "y": 402,
+                    "width": 100,
+                    "height": 100
                 }
             ]
         },
