@@ -1,340 +1,361 @@
 {
     "levels": [
         {
-            "name": "Animal Pen",
+            "name": "Farmhouse",
             "emoji": "🐾",
-            "image": "images/animal-pen.webp",
-            "width": 850,
-            "height": 1335,
+            "image": "images/farmhouse.png",
+            "width": 1080,
+            "height": 1730,
             "items": [
                 {
-                    "name": "Eagle",
-                    "x": 479,
-                    "y": 131,
-                    "width": 72,
-                    "height": 41
-                },
-                {
-                    "name": "Squirrel",
-                    "x": 105,
-                    "y": 174,
-                    "width": 89,
-                    "height": 59
-                },
-                {
-                    "name": "Chameleon",
-                    "x": 386,
-                    "y": 181,
-                    "width": 107,
-                    "height": 55
-                },
-                {
-                    "name": "Weather vane",
-                    "x": 475,
-                    "y": 308,
-                    "width": 72,
-                    "height": 70
-                },
-                {
-                    "name": "Owl",
-                    "x": 105,
-                    "y": 347,
-                    "width": 67,
-                    "height": 59
+                    "name": "Feather",
+                    "x": 330,
+                    "y": 1360,
+                    "width": 129,
+                    "height": 113
                 },
                 {
                     "name": "Parrot",
-                    "x": 551,
-                    "y": 332,
-                    "width": 57,
-                    "height": 71
+                    "x": 662,
+                    "y": 431,
+                    "width": 80,
+                    "height": 80
                 },
                 {
-                    "name": "Pinwheel",
-                    "x": 413,
-                    "y": 345,
-                    "width": 70,
-                    "height": 66
+                    "name": "Paper windmill",
+                    "x": 496,
+                    "y": 458,
+                    "width": 80,
+                    "height": 80
                 },
                 {
-                    "name": "Bell",
-                    "x": 113,
-                    "y": 398,
-                    "width": 73,
-                    "height": 52
-                },
-                {
-                    "name": "Saddle",
-                    "x": 308,
-                    "y": 503,
-                    "width": 81,
-                    "height": 91
-                },
-                {
-                    "name": "Straw hat",
-                    "x": 387,
-                    "y": 499,
-                    "width": 91,
-                    "height": 73
-                },
-                {
-                    "name": "Yak",
-                    "x": 697,
-                    "y": 538,
-                    "width": 70,
-                    "height": 55
-                },
-                {
-                    "name": "Apron",
-                    "x": 426,
-                    "y": 545,
-                    "width": 76,
-                    "height": 85
+                    "name": "Wind vane",
+                    "x": 587,
+                    "y": 389,
+                    "width": 119,
+                    "height": 103
                 },
                 {
                     "name": "Ladder",
-                    "x": 200,
+                    "x": 277,
+                    "y": 679,
+                    "width": 85,
+                    "height": 212
+                },
+                {
+                    "name": "Saddle",
+                    "x": 356,
+                    "y": 660,
+                    "width": 124,
+                    "height": 89
+                },
+                {
+                    "name": "Bell",
+                    "x": 154,
                     "y": 568,
-                    "width": 72,
-                    "height": 83
+                    "width": 80,
+                    "height": 80
                 },
                 {
-                    "name": "Bulletin board",
-                    "x": 135,
-                    "y": 572,
-                    "width": 70,
-                    "height": 75
+                    "name": "Barrel",
+                    "x": 454,
+                    "y": 785,
+                    "width": 100,
+                    "height": 100
                 },
                 {
-                    "name": "Round wooden barrel",
-                    "x": 359,
-                    "y": 614,
-                    "width": 108,
-                    "height": 95
+                    "name": "Boots",
+                    "x": 137,
+                    "y": 851,
+                    "width": 96,
+                    "height": 91
                 },
                 {
-                    "name": "Ostrich egg",
-                    "x": 677,
-                    "y": 633,
-                    "width": 76,
-                    "height": 71
-                },
-                {
-                    "name": "Shoes",
-                    "x": 113,
-                    "y": 669,
-                    "width": 87,
-                    "height": 64
-                },
-                {
-                    "name": "Cat",
-                    "x": 263,
-                    "y": 708,
-                    "width": 82,
-                    "height": 43
-                },
-                {
-                    "name": "Pitchfork",
-                    "x": 515,
-                    "y": 634,
-                    "width": 54,
-                    "height": 119
-                },
-                {
-                    "name": "Bucket",
-                    "x": 585,
-                    "y": 702,
-                    "width": 83,
-                    "height": 67
-                },
-                {
-                    "name": "Water stain",
-                    "x": 427,
-                    "y": 715,
-                    "width": 70,
-                    "height": 75
-                },
-                {
-                    "name": "Jar",
-                    "x": 677,
-                    "y": 718,
-                    "width": 90,
-                    "height": 44
-                },
-                {
-                    "name": "Hunting trap",
-                    "x": 509,
-                    "y": 751,
-                    "width": 84,
-                    "height": 54
-                },
-                {
-                    "name": "Duckling",
-                    "x": 305,
-                    "y": 762,
-                    "width": 68,
-                    "height": 58
-                },
-                {
-                    "name": "Carrot",
-                    "x": 585,
-                    "y": 764,
-                    "width": 65,
-                    "height": 61
-                },
-                {
-                    "name": "Shovel",
-                    "x": 146,
-                    "y": 779,
-                    "width": 63,
-                    "height": 41
-                },
-                {
-                    "name": "Lantern",
-                    "x": 503,
-                    "y": 832,
-                    "width": 65,
-                    "height": 72
+                    "name": "Sign post",
+                    "x": 165,
+                    "y": 690,
+                    "width": 80,
+                    "height": 80
                 },
                 {
                     "name": "Broom",
-                    "x": 73,
-                    "y": 820,
-                    "width": 100,
-                    "height": 78
-                },
-                {
-                    "name": "Wooden cart",
-                    "x": 326,
-                    "y": 848,
-                    "width": 108,
-                    "height": 79
-                },
-                {
-                    "name": "Whip",
-                    "x": 449,
-                    "y": 908,
-                    "width": 113,
-                    "height": 47
-                },
-                {
-                    "name": "Horseshoe",
-                    "x": 560,
-                    "y": 897,
-                    "width": 62,
-                    "height": 47
-                },
-                {
-                    "name": "Stake",
-                    "x": 60,
-                    "y": 934,
-                    "width": 108,
-                    "height": 108
-                },
-                {
-                    "name": "Pet food bowl",
-                    "x": 202,
+                    "x": 93,
                     "y": 974,
-                    "width": 104,
-                    "height": 51
+                    "width": 135,
+                    "height": 200
                 },
                 {
-                    "name": "Elk",
-                    "x": 611,
-                    "y": 944,
-                    "width": 160,
-                    "height": 95
+                    "name": "Shovel",
+                    "x": 179,
+                    "y": 975,
+                    "width": 153,
+                    "height": 119
                 },
                 {
-                    "name": "Dog collar",
-                    "x": 315,
-                    "y": 968,
+                    "name": "Straw hat",
+                    "x": 490,
+                    "y": 631,
+                    "width": 100,
+                    "height": 80
+                },
+                {
+                    "name": "Pitchfork",
+                    "x": 645,
+                    "y": 737,
                     "width": 95,
-                    "height": 53
+                    "height": 243
                 },
                 {
-                    "name": "Chain",
-                    "x": 469,
-                    "y": 970,
-                    "width": 81,
-                    "height": 55
+                    "name": "Cat",
+                    "x": 404,
+                    "y": 880,
+                    "width": 80,
+                    "height": 80
                 },
                 {
-                    "name": "Tassel",
-                    "x": 377,
-                    "y": 1014,
-                    "width": 84,
-                    "height": 62
-                },
-                {
-                    "name": "Padlock",
-                    "x": 256,
-                    "y": 1034,
-                    "width": 85,
-                    "height": 53
-                },
-                {
-                    "name": "Bamboo basket",
-                    "x": 101,
-                    "y": 1054,
-                    "width": 108,
-                    "height": 110
-                },
-                {
-                    "name": "Butterfly",
-                    "x": 673,
-                    "y": 1106,
-                    "width": 74,
-                    "height": 55
+                    "name": "Rubber duck",
+                    "x": 390,
+                    "y": 950,
+                    "width": 80,
+                    "height": 80
                 },
                 {
                     "name": "Fish bone",
-                    "x": 207,
-                    "y": 1119,
-                    "width": 89,
-                    "height": 58
+                    "x": 220,
+                    "y": 1433,
+                    "width": 122,
+                    "height": 79
                 },
                 {
-                    "name": "Ladle",
-                    "x": 349,
-                    "y": 1111,
-                    "width": 136,
-                    "height": 57
+                    "name": "Wooden stake",
+                    "x": 78,
+                    "y": 1180,
+                    "width": 151,
+                    "height": 144
                 },
                 {
-                    "name": "Gloves",
-                    "x": 599,
-                    "y": 1130,
-                    "width": 62,
-                    "height": 71
+                    "name": "Basket",
+                    "x": 124,
+                    "y": 1323,
+                    "width": 168,
+                    "height": 133
+                },
+                {
+                    "name": "Eagle",
+                    "x": 568,
+                    "y": 126,
+                    "width": 133,
+                    "height": 102
+                },
+                {
+                    "name": "Pouch",
+                    "x": 309,
+                    "y": 1549,
+                    "width": 147,
+                    "height": 139
                 },
                 {
                     "name": "Key",
-                    "x": 432,
-                    "y": 1177,
-                    "width": 111,
-                    "height": 81
+                    "x": 542,
+                    "y": 1555,
+                    "width": 80,
+                    "height": 80
                 },
                 {
-                    "name": "Sack",
-                    "x": 254,
-                    "y": 1214,
-                    "width": 120,
-                    "height": 83
-                },
-                {
-                    "name": "L",
-                    "x": 201,
-                    "y": 347,
-                    "width": 53,
-                    "height": 48
+                    "name": "Ladle",
+                    "x": 484,
+                    "y": 1394,
+                    "width": 125,
+                    "height": 91
                 },
                 {
                     "name": "Rabbit",
-                    "x": 241,
-                    "y": 730,
-                    "width": 60,
+                    "x": 309,
+                    "y": 951,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Gloves",
+                    "x": 670,
+                    "y": 1468,
+                    "width": 138,
+                    "height": 123
+                },
+                {
+                    "name": "Beast trap",
+                    "x": 631,
+                    "y": 975,
+                    "width": 140,
+                    "height": 69
+                },
+                {
+                    "name": "Water stain",
+                    "x": 486,
+                    "y": 966,
+                    "width": 141,
+                    "height": 71
+                },
+                {
+                    "name": "Butterfly",
+                    "x": 793,
+                    "y": 1421,
+                    "width": 120,
+                    "height": 102
+                },
+                {
+                    "name": "Footprint",
+                    "x": 846,
+                    "y": 986,
+                    "width": 167,
+                    "height": 80
+                },
+                {
+                    "name": "Giant elk",
+                    "x": 737,
+                    "y": 1071,
+                    "width": 217,
+                    "height": 265
+                },
+                {
+                    "name": "Brush",
+                    "x": 467,
+                    "y": 1308,
+                    "width": 127,
                     "height": 82
+                },
+                {
+                    "name": "Lantern",
+                    "x": 624,
+                    "y": 1045,
+                    "width": 82,
+                    "height": 98
+                },
+                {
+                    "name": "Bowl",
+                    "x": 258,
+                    "y": 1206,
+                    "width": 118,
+                    "height": 109
+                },
+                {
+                    "name": "Clay jug",
+                    "x": 846,
+                    "y": 885,
+                    "width": 118,
+                    "height": 98
+                },
+                {
+                    "name": "Wooden cart",
+                    "x": 386,
+                    "y": 1077,
+                    "width": 161,
+                    "height": 130
+                },
+                {
+                    "name": "Lock",
+                    "x": 357,
+                    "y": 1247,
+                    "width": 98,
+                    "height": 93
+                },
+                {
+                    "name": "Whip",
+                    "x": 540,
+                    "y": 1133,
+                    "width": 101,
+                    "height": 96
+                },
+                {
+                    "name": "L",
+                    "x": 237,
+                    "y": 457,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Collar",
+                    "x": 391,
+                    "y": 1187,
+                    "width": 121,
+                    "height": 94
+                },
+                {
+                    "name": "Ostrich egg",
+                    "x": 863,
+                    "y": 795,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Bucket",
+                    "x": 750,
+                    "y": 898,
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "name": "Yak",
+                    "x": 852,
+                    "y": 661,
+                    "width": 120,
+                    "height": 100
+                },
+                {
+                    "name": "Apron",
+                    "x": 538,
+                    "y": 699,
+                    "width": 80,
+                    "height": 100
+                },
+                {
+                    "name": "Chameleon",
+                    "x": 515,
+                    "y": 252,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Carrot",
+                    "x": 778,
+                    "y": 961,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Horseshoe",
+                    "x": 638,
+                    "y": 1184,
+                    "width": 103,
+                    "height": 98
+                },
+                {
+                    "name": "Squirrel",
+                    "x": 127,
+                    "y": 262,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Owl",
+                    "x": 125,
+                    "y": 438,
+                    "width": 80,
+                    "height": 80
+                },
+                {
+                    "name": "Chain",
+                    "x": 557,
+                    "y": 1226,
+                    "width": 97,
+                    "height": 90
+                },
+                {
+                    "name": "Windmill",
+                    "x": 918,
+                    "y": 483,
+                    "width": 124,
+                    "height": 184
                 }
             ]
         },
@@ -2067,7 +2088,6 @@
                 }
             ]
         },
-
         {
             "name": "Castle Gate",
             "emoji": "🧱",
